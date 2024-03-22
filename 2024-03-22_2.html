@@ -8,10 +8,38 @@
 <body>
     
     <script>
-        console.log("안녕", "하세요", "콘솔", "로그", "사용해봅니다")
-        console.log("제 나이는", 19, "살 입니다")
+        console.log( "안녕", "하세요", "콘솔", "로그", "사용해봅니다")
+        console.log( "제 나이는", 19, "살 입니다" )
+        console.log( "제 나이는", "19", "살 입니다" )
+
+                // 데이터의 타입
         // let = 10 숫자
         // let = "10" 문자
+
+        // <문자로서의 숫자>
+        // 1. 6624
+        // 2. 9
+        // 아래가 더 큼, 문자로서의 숫자는 앞 숫자를 먼저 봄.
+
+        console.log( '문자와 숫자의 연산 비교 중' )
+        console.log( 19 + 20 )
+        console.log( "19" + "20" ) // 문자끼리 더하면, 연결이 된다. & "가"+"나" 와 같은 의미
+        
+        let 레벨 = 150
+        let 닉네임 = "아기토끼"
+        console.log(`내 레벨은 ${레벨} 입니다`)
+        console.log("내 레벨은", 레벨, "입니다")
+        console.log(`내 레벨은 ${레벨} 입니다. 닉네임은 ${닉네임} 입니다`)
+
+        let 참거짓1 = true
+        let 참거짓2 = false
+        console.log(참거짓1)
+        console.log(참거짓2)
+
+        console.log(typeof 레벨)
+        console.log(typeof 닉네임)
+        console.log(typeof 참거짓1)
+        
     </script>
 </body>
 </html>
