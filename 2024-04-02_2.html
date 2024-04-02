@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS 문법 새로운 것</title>
+
+  <style>
+    /* 원하는태그 {} */
+    p {
+      background-color: wheat;
+      text-align: center;
+      padding: 20px;
+      width: 300px;
+    }
+    h1 {
+      color: slateblue;
+      border: 1px #AAA solid;
+      border-radius: 10px;
+    }
+    /*  *: 모든 태그 전부를 의미 */
+    * {margin: 0; cursor: pointer;} 
+    
+    .title{
+      color: tomato;
+      background-color: skyblue;
+      width: 350px;
+    }
+    .title1{padding: 20px;}
+    .title2{border: 2px #222222 solid;}
+    #subtitle{color: darkturquoise;}
+    #subtitle2{color: rgb(255, 208, 21);}
+  </style>
+
+</head>
+<body>
+  
+  <p style="color: coral;">p태그1</p>
+  <p style="color: coral;">p태그2</p>
+  <h1>h1태그</h1>
+
+  <br><br>
+
+  <h2 class="title title1">제목1</h2>
+  <h3 id="subtitle">소 제목</h3>
+  <br>
+  <h2 class="title title2">제목2</h2>
+  <h3 id="subtitle2">소 제목</h3>
+
+</body>
+</html>
