@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+  <div style="float: left; margin-right: 5px;">
+    <h1 class="버튼1" style="background-color: aquamarine; width: 500px; height: 200px;">나는 민트랍니다 안티가 많아요 ㅜ</h1>
+  </div>
+  <div style="float: left;">
+    <h1 class="버튼2" style="background-color: deepskyblue; width: 500px; height: 200px;">나는 블루</h1>
+  </div>
+
+  <script>
+    let 버튼1 = document.querySelector(".버튼1")
+    let 버튼2 = document.querySelector(".버튼2")
+
+    버튼1.addEventListener("mousedown", function() {
+      버튼1.style.backgroundColor = '#B711FF'
+    })
+    버튼1.addEventListener("mouseup", function() {
+      버튼1.style.backgroundColor = 'aquamarine'
+    })
+
+    버튼2.addEventListener("mousedown", function() {
+      버튼2.style.backgroundColor = 'yellow'
+    })
+    버튼2.addEventListener("mouseup", function() {
+      버튼2.style.backgroundColor = 'deepskyblue'
+    })
+
+    </script>
+</body>
+
+</html>
