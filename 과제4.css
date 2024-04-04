@@ -1,0 +1,50 @@
+header {
+  border: 2px red solid;
+  padding: 10px;
+}
+span {
+  font-size: 40pt;
+  color: rgb(89, 89, 255);
+}
+.linnk{
+  color: green;
+  font-size: 20px;
+}
+.pp{
+  border: 3px green solid;
+  width: 50%;
+}
+.navi {
+  background-color: rgb(196, 255, 235);
+  border: 3px gray solid;
+}
+.navi2 {
+  font-size: 20px;
+}
+.crass {
+  text-align: center;
+}
+#sec1 {
+  background-color: rgb(225, 247, 255);
+  border: 3px blue solid;
+  padding: 10px;
+}
+img {
+  height: 150px;
+}
+.sec2 {
+  background-color: rgb(249, 226, 255);
+  padding: 10px;
+  border-radius: 30px;
+}
+.art {
+  background-color: rgb(255, 212, 132);
+  padding: 15px;
+}
+footer {
+  background-color: beige;
+  padding: 15px;
+}
+.h12 {
+  color: blue;
+}
