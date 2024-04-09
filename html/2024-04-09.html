@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>테이블</title>
+
+  <style>
+    table {
+      border: 5px solid black;
+      border-collapse: collapse;
+    }
+    td {
+      width: 200px;
+      height: 100px;
+      border: 1px dashed black;
+    }
+    
+  </style>
+</head>
+<body>
+  <table>
+    <caption>캡션</caption>
+    <colgroup>
+      <col style="background-color: turquoise;">
+      <col>
+      <col style="background-color: salmon;">
+    </colgroup>
+    <thead>
+    <tr>
+      <th>1번줄 1번칸</th>
+      <th>1번줄 2번칸</th>
+      <th>1번줄 3번칸</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr>
+      <td>2번줄 1번칸</td>
+      <td colspan="2">2번줄 2번칸</td> <!-- colspan: column span -->
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+      <td rowspan="3">3번줄 1번칸</td>
+      <td>3번줄 2번칸</td>
+      <td>3번줄 3번칸</td>
+    </tr>
+    <tr>
+      <td rowspan="2">4번줄 2번칸</td>
+      <td>4번줄 3번칸</td>
+    </tr>
+    <tr>
+      <td>5번줄 3번칸</td>
+    </tr>
+    </tbody>
+
+    <tfoot>
+      <tr>
+        <td>6번째 1번칸</td>
+        <td>6번째 2번칸</td>
+        <td>6번째 3번칸</td>
+      </tr>
+    </tfoot>
+  </table>
+</body>
+</html>
