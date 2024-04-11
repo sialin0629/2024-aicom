@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>폼 문서 만들기</title>
+</head>
+<body>
+  <form action="">
+    <fieldset>
+      <legend>제목1</legend>
+      <label for="">ID <input type="text" name="아이디입력칸" id="아이디입력" placeholder="id 입력하세요"></label>
+      <br>
+      <label for="">비밀번호 <input type="password" name="" id="비번" placeholder="pw 입력하세요"></label>
+      <br>
+      <label for="">이메일 <input type="email" name="" id="" placeholder="이메일 입력하세요"></label>
+      <br>
+      <label for="">휴대폰 <input type="tel" name="" id="" placeholder="휴대폰번호 입력"></label>
+      <br>
+    </fieldset>
+    <fieldset>
+      <legend>제목2</legend>
+      <label for=""><input type="checkbox" value="chicken">치킨</label>
+      <label for=""><input type="checkbox" value="pizza">피자</label>
+      <label for=""><input type="checkbox" value="jok">족발</label>
+      <label for=""><input type="checkbox" value="tteok">떡순튀</label>
+      <br>
+      <br>
+      <label for="">좋아하는 음식
+        <br>
+        <input id="food1" type="checkbox" value="chicken">
+        <label for="food1">치킨</label>
+        <input id="food2" type="checkbox" value="pizza">
+        <label for="food2">피자</label>
+        <br>
+        <br>
+        <label><input type="radio" name="소속학과" value="ai">AI컴퓨터</label>
+        <label><input type="radio" name="소속학과" value="security">컴퓨터보안과</label>
+        <label><input type="radio" name="소속학과" value="media">미디어크리에이터</label>
+      </label>
+    </fieldset>
+    <button type="submit">제출</button>
+    <button type="reset">제출</button>
+  </form>
+</body>
+</html>
