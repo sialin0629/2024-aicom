@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text" name="test" id="n" onchange="inputValueChange('n')" >
+  <input type="text" name="test" id="q" onchange="inputValueChange('q')" >
+  <input type="text" name="test" id="j" onchange="inputValueChange('j')" >
+  <script>
+    for (let a = 0; a  <= 100; a = a+3) {
+      console.log(a);
+    }
+    function inputValueChange(inputId){
+      let inputValue = document.getElementById(inputId).value;
+      let n = parseInt(inputValue);
+      let sum = 0;
+      
+      if (inputId === 'n') {
+        for (let i = 1; i <= n; i++) {
+          sum += i;
+        }
+      } else if (inputId === 'q') {
+        for (let i = 1; i <= n; i++) {
+            if (i % 2 != 0) {
+              sum += i;
+            }
+        }
+      } else if (inputId === 'j') {
+          let result = '';
+          if (n > 0) {
+            for (let i = 1; i <= 9; i++) {
+              result += `|${n} x ${i} = ${n * i}|`;
+              console.log(result)
+            }
+          }
+        }
+        
+      console.log(sum);
+      }
+  </script>
+</body>
+</html>
