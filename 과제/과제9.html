@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    button {
+      background-color: #5656A7;
+      color: white;
+      width: 200px;
+      height: 50px;
+      margin: 20px;
+      border: none;
+      border-radius: 10px;
+      font-size: 30pt;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>버튼클릭에 따른 이미지 슬라이드</h1>
+  <button class="button1">1</button>
+  <button class="button2">2</button>
+  <button class="button3">3</button>
+  <br>
+  <img class="img1" src="https://i.ytimg.com/vi/ISeED9FbH6k/mqdefault.jpg" alt="" width="500">
+
+  <script>
+    let img = document.querySelector(".img1")
+    let button01 = document.querySelector(".button1")
+    let button02 = document.querySelector(".button2")
+    let button03 = document.querySelector(".button3")
+
+    button01.addEventListener("click", function() {
+      img.setAttribute("src", "https://i.ytimg.com/vi/ISeED9FbH6k/mqdefault.jpg")
+    })
+
+    button02.addEventListener("click", function() {
+      img.setAttribute("src", "https://i.ytimg.com/vi/nkZlIQ8D-0A/mqdefault.jpg")
+    })
+
+    button03.addEventListener("click", function() {
+      img.setAttribute("src", "https://i.ytimg.com/vi/Xts6ecd3dJw/maxresdefault.jpg")
+    })
+  </script>
+
+</body>
+</html>

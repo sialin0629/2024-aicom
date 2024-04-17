@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>속성 조작</title>
+</head>
+<body>
+  <img id="img" src="/img/nayoung1.JPG" alt="이미지 안나옴" width="450px">
+
+
+  <script>
+    // 1. 원하는 태그 지정
+    let 이미지
+    이미지 = document.querySelector("#img")
+    
+    // 2. 원하는대로 조작
+    // 이미지.setAttribute("내가 조작할 속성", "무엇으로 변경할지")
+
+    이미지.setAttribute("src", "/img/img1.png")
+  </script>
+</body>
+</html>
