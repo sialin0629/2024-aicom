@@ -1,0 +1,35 @@
+#title {
+  color: #0040B6;
+
+  font-size: 40pt;
+  font-weight: 600;
+}
+fieldset {
+  border: none;
+}
+header {
+  background-color: #EDF9FF;
+  width: 500px;
+  padding: 20px;
+}
+
+main {
+  background-color: #EDF9FF;
+  width: 500px;
+  padding: 20px;
+}
+
+.sub {
+  color: #0040B6;
+}
+button {
+  width: 250px;
+  height: 50px;
+  background-color: #0040B6;
+  color: white;
+  border: none;
+}
+footer {
+  width: 540px;
+  text-align: center;
+}

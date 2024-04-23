@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    legend {
+      font-size: 40pt;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <form action="">
+    <fieldset>
+    <legend>회원가입 페이지</legend>
+    <div>
+      <h1>로그인 정보</h1>
+      <label for=""><b>ID 입력</b> <input type="text" placeholder="최대 10자"></label>
+      <br>
+      <label for=""><b>PW 입력</b> <input type="text" placeholder="영어, 숫자 섞어서" required></label>
+      <br>
+      <label for=""><b>PW 입력확인</b> <input type="text" placeholder="영어, 숫자 섞어서" required></label>
+    </div>
+    <hr>
+    <div>
+      <h1>개인정보</h1>
+      <b>주소</b>
+      <br><br>
+      <label for=""> <input type="text"></label>
+      <br><br>
+      <b>연령대</b>
+      <br><br>
+      <label for=""> 10~19 <input type="radio" name="age" value="1019"> </label>
+      <label for=""> 20~29 <input type="radio" name="age" value="2029"> </label>
+      <label for=""> 30~39 <input type="radio" name="age" value="3039"> </label>
+      <label for=""> 40~49 <input type="radio" name="age" value="4049"> </label>
+      <label for=""> 50이상 <input type="radio" name="age" value="50~"> </label>
+      <br><br>
+      <b>취미</b>
+      <br><br>
+      <label for=""> 게임 <input type="checkbox" name="hobby" value="game"></label>
+      <label for=""> 유튜브 <input type="checkbox" name="hobby" value="youtube"></label>
+      <label for=""> 잉여짓 <input type="checkbox" name="hobby" value="surplus"></label>
+      <label for=""> 운동 <input type="checkbox" name="hobby" value="exercise"></label>
+      <label for=""> 독서 <input type="checkbox" name="hobby" value="reading"></label>
+      <label for=""> 여행 <input type="checkbox" name="hobby" value="trip"></label>
+      <label for=""> 창작 <input type="checkbox" name="hobby" value="creation"></label>
+      <br><br>
+      <b>이메일</b>
+      <br><br>
+      <label for=""><input type="email" placeholder="abc@naver.com"></label>
+      <br><br>
+      <b>연락처</b>
+      <br><br>
+      <label for=""><input type="tel" placeholder="000-0000-0000"></label>
+      <br><br>
+      <b>생년월일</b>
+      <br><br>
+      <label for=""><input type="date"></label>
+      <br><br>
+      <label for="">키(최소120 최대195 기본 150 단위5) <input type="range" min="130" max="195" step="5" value="150">
+      <br><br>
+      <label for="">사진 <input type="file"></label>
+      <hr>
+
+
+    </div>
+
+    <button type="submit">회원 가입</button>
+    <button type="reset">다시 입력</button>
+  </fieldset>
+  </form>
+</body>
+</html>

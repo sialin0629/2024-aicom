@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/과제/과제12.css">
+</head>
+<body>
+  <h1>주문 페이지</h1>
+  <p class="sub">치킨 주문을 위한 페이지 입니다. 정확한 내용을 기재 바랍니다.</p>\
+
+  <br>
+
+  <form>
+    <fieldset>
+      <header class="box">
+        <h2>메뉴 선택</h2>
+        <label>
+        <p class="sub">사진을 누르면 메뉴가 선택됨</p>
+        <label><input type="radio" name="menu" value="간장티꾸닭"> <img src="https://i.pinimg.com/originals/2a/da/be/2adabeb2b095d65ae325b49d642fa1d6.jpg">간장티꾸닭</label>
+        <label><input type="radio" name="menu" value="스오누 어니언"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJuBDl-fV-z2p4Fm_GzQEtJEqZaBcX3OzRQ0rewvoBaw&s">스노우 어니언</label>
+        <label><input type="radio" name="menu" value="양념"> <img src="https://cdn.imweb.me/upload/S20220826948cbdc34dca3/a7e21622bc1f0.png">양념</label>
+        </label>
+      
+
+        <br><br><br>
+        <hr>
+        <br>
+        <h3>사이드메뉴</h3>
+        <label>
+          <input type="checkbox" name="side" value="치즈볼"> 치즈볼
+          <input type="checkbox" name="side" value="치킨무"> 치킨무
+          <input type="checkbox" name="side" value="머스타드 소스"> 머스타드 소스
+          <input type="checkbox" name="side" value="칠리 소스"> 칠리 소스
+        </label>
+
+        <br><br>
+
+        <h3>선택사항</h3>
+        <label>
+          <input type="checkbox" name="options" value="비닐 장갑"> 비닐 장갑
+          <input type="checkbox" name="options" value="나무젓가락 제외"> 나무젓가락 제외
+          <input type="checkbox" name="options" value="치킨 무 제외"> 치킨 무 제외
+          <input type="checkbox" name="options" value="소스 제외"> 소스 제외
+          <br>
+          맵기(1~5)
+          <input type="range" min="1" max="5">
+          <br>
+          소스양
+          <select>
+            <option value="many">많음</option>
+            <option value="middle">보통</option>
+            <option value="little">적음</option>
+          </select>
+        </label>
+        
+        <br><br>
+
+        <h3>기타 희망사항</h3>
+        <label>
+        <textarea name="" id="" cols="60" rows="5"></textarea>
+        </label>
+
+      </header>
+
+      <br>
+      
+      <main class="box left">
+        <h2>주문 정보</h2>
+        <p class="sub">주문자의 정보</p>
+        <label>
+          주문자 성명
+          <input type="text" placeholder="홍길동">
+        </label>
+        <label>
+          <br>
+          전화번호
+          <input type="tel" placeholder="000-0000-0000">
+          <br>
+          주소
+          <input type="text" placeholder="홍길동">
+          <br>
+          쿠폰번호
+          <input type="text" placeholder="홍길동">
+          <br>
+          도착날짜
+          <input type="date">
+          <br>
+          <b>지불방법</b>
+          <input type="radio" name="pay" value="card"> 카드
+          <input type="radio" name="pay" value="coupon"> 쿠폰
+          <input type="radio" name="pay" value="cash"> 현금
+          <br>
+          <b>카드사</b>
+          <input type="radio" name="card company" value="shinhan"> 신한
+          <input type="radio" name="card company" value="kb"> 국민
+          <input type="radio" name="card company" value="kakao"> 카카오
+          <br>
+          카드번호
+          <input type="text" placeholder="000-0000-0000">
+        </label>
+      </main>
+
+      <br>
+
+      <footer class="box">
+        <h2>개인정보 수집 및 이용 동의</h2>
+        <p class="sub">주문 정보를 저장하기 위해 회원의 개인정보를 수집하고 있으며, 수집에 동의하지 않으면 주문이 불가능 합니다.</p>
+
+        <div class="left">
+          <label>
+            <input type="radio" name="agreement1" value="agree">동의
+            <input type="radio" name="agreement1" value="refuse">거절
+          </label>
+          </div>
+
+        <hr>
+        
+        <h2>이벤트 문자 및 알림 수신</h2>
+        <p class="sub">이벤트 및 각종 혜택 정보 제공을 위한 문자 전송을 수신합니다.</p>
+
+        <div class="left">
+        <label>
+          <input type="radio" name="agreement2" value="agree">동의
+          <input type="radio" name="agreement2" value="refuse">거절
+        </label>
+        </div>
+      </footer>
+
+      <div class="box2 button1">
+      <button type="submit">주문</button>
+      <button type="reset">주문 취소</button>
+      </div>
+    </fieldset>
+  </form>
+</body>
+</html>
