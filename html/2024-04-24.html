@@ -1,40 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
 <body>
-  <h1>Emmet : 매크로</h1>
+  <img src="/img/nayoung1.JPG" width="300px" alt="">
 
-  <button id="button1">이미지1</button>
-  <button id="button2">이미지2</button>
-  <button id="button3">이미지3</button>
-
-  <img src="/img/nayoung1.JPG" width="200px">
+  <input type="text"> <button>데이터 입력</button>
 
   <script>
-    // 버튼 누르면 -> 이미지가 바뀐다.
-
-    // 1. 버튼 지정한다.
-    let 버튼1 = document.querySelector("#button1")
-    let 버튼2 = document.querySelector("#button2")
-    let 버튼3 = document.querySelector("#button3")
-
+    let 크기
     let 이미지 = document.querySelector("img")
+    크기 = 이미지.getAttribute("width")
+    크기 = 크기 + 100
+    console.log(크기)
 
-    // 2. 버튼에 DOM 조작을 한다.
-    // 버튼 누르는 것: 이벤트
-    버튼1.addEventListener("click", () => {
-      // 이미지 바뀌는 것: setAttribute로 src 바꾸는 것
-      이미지.setAttribute("src", "https://p16-capcut-sign-va.ibyteimg.com/tos-alisg-v-643f9f/6010176e38f84f9da9fa737fa02da2fe~tplv-nhvfeczskr-1:250:0.webp?lk3s=44acef4b&x-expires=1740767377&x-signature=3RzFzuffenS64sh%2F9L88jMGbNcE%3D")
+    
+    let 입력칸
+    입력칸 = document.querySelector("input")
+
+    let 버튼 = document.querySelector("button")
+    버튼.addEventListener("click", () => {
+      let 데이터 = 입력칸.value
+      console.log(데이터)
     })
 
-    버튼2.addEventListener("click", () => {
-      // 이미지 바뀌는 것: setAttribute로 src 바꾸는 것
-      이미지.setAttribute("src", "/img/nayoung1.JPG")
-    })
+
   </script>
 </body>
 </html>
