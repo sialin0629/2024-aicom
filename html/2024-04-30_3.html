@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>9회차- CSS선택자, 가상클래스</title>
+
+  <style>
+    .box1 {
+      width: 600px; height: 600px;
+      background-color: skyblue;
+    }
+    .box2 {
+      width: 400px; height: 300px;
+      background-color: chocolate;
+    }
+
+    .box1 > h1 {
+      color: palegreen;
+    }
+
+    .box1 h1 {
+      border: 2px solid #FFF;
+    }
+
+    p:hover {
+      background-color: #c7c7c7;
+    }
+
+    p:active {
+      background-color: #555;
+      color: #DDD;
+    }
+  </style>
+</head>
+<body>
+  <div class="box1">
+    <h1>box1의 h1태그1</h1>
+    <h1>box1의 h1태그2</h1>
+    <h2>box1의 h2태그1</h2>
+    <h2>box1의 h2태그2</h2>
+      <div class="box2">
+        <h1>box2의 h1태그1</h1>
+        <h1>box2의 h1태그2</h1>
+        <h2>box2의 h2태그1</h2>
+        <h2>box2의 h2태그2</h2>
+      </div>
+  </div>
+
+  <p>Lorem ipsum dolor sit amet consectetur.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+</body>
+</html>
