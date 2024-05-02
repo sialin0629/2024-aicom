@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> 자바 스크립트 클래스 다루기</title>
+
+  <style>
+    .box {
+      width: 300px; height: 300px;
+      background-color: darkorange;
+    }
+
+    .text {
+      color: #FFF;
+      font-size: 20pt;
+      font-weight: 900;
+    }
+  </style>
+</head>
+<body>
+  <div class="box text">박스, 텍스트 클래스</div>
+  <div id="target">타겟</div>
+
+  <script>
+    // 1. 대상 지정
+    let 두번째div = document.querySelector("#target")
+
+    // 2. 지정한 대상을 조작하기
+    두번째div.classList.add("box")
+    두번째div.classList.add("text")
+
+    // 태그 내부의 내용 조작하는 코드
+
+    // 1. textContent
+    두번째div.textContent = 두번째div.textContent + "안녕하세요"
+
+    // 2. innerTHML
+    두번째div.innerHTML = "<h1>h1태그 사용함<h1>"
+  </script>
+</body>
+</html>

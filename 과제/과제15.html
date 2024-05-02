@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>BMI 테스트</h1>
+
+    <label>키 <input id="height" type="text"></label>
+
+    <br><br>
+
+    <label>체중 <input id="weight" type="text"></label>
+
+    <br><br>
+
+    <button>계산</button>
+
+  <hr>
+
+  <h1 id="result">BMI 수치 :</h1>
+  <h1 id="result1"></h1>
+
+
+  <script>
+    let button = document.querySelector("button")
+
+    button.addEventListener("click",() => {
+      let height = document.querySelector("#height")
+      let height1 = height.value/100
+
+      let weight = document.querySelector("#weight")
+      let weight1 = weight.value
+
+      let result = document.querySelector("#result")
+      let result1 = document.querySelector("#result1")
+      let bmi = weight1/(height1*height1)
+      result.textContent = "BMI 수치 " + bmi
+
+      if (18.5 <= bmi && bmi <= 22.9) { 
+        result1.textContent = "정상 범위"
+      }
+      else {
+        result1.textContent = "비정상 범위"
+      }
+      
+    })
+  </script>
+</body>
+</html>

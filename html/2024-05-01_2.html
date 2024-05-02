@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>0501 태그 생성 자바스크립트</title>
+
+  <style>
+    .parent {
+      width: 400px; height: 200px;
+      background-color: sandybrown;
+    }
+
+    .parent2 {
+      width: 400px; height: 200px;
+      background-color: rgb(24, 196, 21);
+    }
+
+    .children {
+      color: #FFF;
+      font-weight: 900;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <div class="parent">
+    div 박스
+  </div>
+
+  <br>
+
+  <div class="parent2">
+    div 박스
+  </div>
+
+  <script>
+    // 1. 새로운 태그 생성
+    let 새로만든태그
+    새로만든태그 = document.createElement("p")
+
+
+    console.log(새로만든태그)
+
+    새로만든태그.textContent = "안녕하세요 태그 새로 만들었어용"
+    새로만든태그.classList.add("children")
+    console.log(새로만든태그)
+
+    // 2. 만든 태그를 화면에 나타내기 : 부모에게 자식으로 만들어줘야 함
+    let 박스 = document.querySelector(".parent")
+    박스.appendChild(새로만든태그) // 자식을 갖다 붙인다.
+
+    박스.removeChild(새로만든태그)
+
+    // 다른 부모에게 append 시키면, 자식이 옮겨진다
+    let 박스2 = document.querySelector(".parent2")
+    박스2.appendChild(새로만든태그) // 자식을 갖다 붙인다.
+  </script>
+</body>
+</html>
