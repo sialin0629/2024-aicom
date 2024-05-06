@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+  <script>
+    if (-10000 <= n1, n2 <= 100000)
+      if (n1 > n2) {
+        alert(">")
+      }
+      else if (n1 < n2) {
+        alert("<")
+      }
+      else if (n1 == n2) {
+        alert("==")
+      }
+
+
+
+    if (90<= n3 <= 100) {
+      alert("A")
+    }
+    else if (80<= n3 <= 89) {
+      alert("B")
+    }
+    else if (70<= n3 <= 79) {
+      alert("C")
+    }
+    else if (60<= n3 <= 69) {
+      alert("D")
+    }
+    else {
+      alert("F")
+    }
+
+
+
+    if ( 0<= n4 <= 4000) {
+      if ((n4 % 4 == 0 && n4 % 100 != 0) || n4 % 400 == 0) {
+        alert("1")
+      }
+      else {
+        alert("0")
+      }
+    }
+
+
+
+    if ( x != 0 && -1000 <= x <= 1000 && y != 0 && -1000 <= y <= 1000 ){
+      if (x >= 0 && y >= 0) {
+        alert("1")
+      }
+      if (x <= 0 && y >= 0) {
+        alert("2")
+      }
+      if (x <= 0 && y <= 0) {
+        alert("3")
+      }
+      if (x >= 0 && y <= 0) {
+        alert("4")
+      }
+    }
+
+
+    if (0 <= H <= 23, 0 <= M <= 59) {
+      if (H == 0 && 45 <= M) {
+        alert(0, M-45)
+      }
+      if (H == 0 && M < 45) {
+        alert(23, M+15)
+      }
+      if (H > 0 && 45 <= M) {
+        alert(H, M-45)
+      }
+      else {
+        alert(H-1, M+15) 
+      }
+    }
+  </script>
+</body>
+</html>

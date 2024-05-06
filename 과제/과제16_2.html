@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>과제 해설</title>
+
+    <link rel="stylesheet" href="/과제/과제16.css">
+</head>
+<body>
+    <h3>마우스로 술래잡기</h3>
+    <button class="start">시작</button> 
+    <button class="end">정지</button>
+
+    <br><br>
+
+    <div id="head">
+      <div id="box1"><h1>박스1</h1></div>
+      <div id="box2"><h1>박스2</h1></div>
+      <div id="box3"><h1>박스3</h1></div>
+    </div>
+  
+    <br>
+  
+    <div id="footer">
+      <h3>시작을 누르면 이미지가 나타나고, 정지를 누르면 사라져야 한다.</h3>
+      <h3>시작하면 첫번째 박스에서 시작한다.</h3>
+      <h3>시작한 상태에서 다시 시작을 눌러도 아무 에러 없어야 함</h3>
+      <h3>중지한 상태에서 다시 중지를 눌러도 아무 에러 없어야 함</h3>
+      <h3>이미지가 어디에 있든 작도에 이상이 없어야 함</h3>
+    </div>
+  
+    <script>
+
+        let 박스1 = document.querySelector("#box1")
+        let 박스2 = document.querySelector("#box2")
+        let 박스3 = document.querySelector("#box3")
+
+        let 지금위치 = 1
+        let 실행 = 0
+
+        let 이미지 = document.createElement("img")
+        이미지.setAttribute("src", "http://ohfun.net/contents/article/images/2018/0627/1530067474523175.jpg");
+        이미지.setAttribute("width", "200px")
+
+
+
+        // 시작 버튼을 클릭하면 이미지가 나타난다
+
+        // 1. 시작 버튼 지정하기
+        let 시작 = document.querySelector(".start")
+        시작.addEventListener("click", () => {  // 2. 시작 버튼 클릭 event 지정
+            // 3. 이미지가 새로 생성되어야 함. 생성하고, src도 지정해줘야 함
+          if (실행 == 0) {
+            실행 = 1
+            // 4. 새로 생성된 이미지는 박스1으로 들어간다
+            박스1.appendChild(이미지)
+          }
+        })
+
+        // 이미지에 마우스 올리면, 박스123 순으로 이동
+
+        // 1. 이미지에 마우스 올리는 이벤트 감지
+        
+
+        이미지.addEventListener("mouseover", () => {
+            console.log("마우스 갖다 댔음")
+          
+            if (지금위치 == 1) { // if 박스1에 있다면 ㅡ> 박스2로 이동
+                박스2.appendChild(이미지)
+                지금위치 = 2
+            }
+            else if (지금위치 == 2) { // if 박스2에 있다면 ㅡ> 박스3로 이동
+                박스3.appendChild(이미지)
+                지금위치 = 3
+            }
+            else if (지금위치 == 3) { // if 박스3에 있다면 ㅡ> 박스1로 이동
+                박스1.appendChild(이미지)
+                지금위치 = 1
+            }
+        })
+
+        // 정지 버튼을 클릭면 이미지가 없어진다 : 부모 기준으로 이미지를 remove 시키면 된다.
+        let 정지버튼 = document.querySelector(".end") // 1. 정지버튼 지정
+
+        정지버튼.addEventListener("click", () => { // 2. 정지버튼 클릭하는 이벤트 생성
+          if (실행 == 1) {
+            실행 = 0
+            // 3. 부모위치 기준으로 이미지를 remove 시키기
+                if(지금위치 == 1) { // 지금위치 == 1이면 부모1 기준으로 remove
+                    박스1.removeChild(이미지)
+                }
+                if(지금위치 == 2) { // 지금위치 == 2이면 부모2 기준으로 remove
+                    박스2.removeChild(이미지)
+                }
+                if(지금위치 == 3) { // 지금위치 == 3이면 부모3 기준으로 remove
+                    박스3.removeChild(이미지)
+                }
+          }   
+        })
+
+    </script>
+    
+</body>
+</html>
