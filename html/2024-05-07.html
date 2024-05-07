@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    button {
+      display: block;
+    }
+    h1 {
+      background-color: skyblue;
+      display: inline-block;
+    }
+    .box {
+      width: 200px; height: 200px;
+      background-color:rgb(145, 255, 132);
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <h2>overflow 속성 : 내용이 넘치는 경우, 처리 방식</h2>
+  <div style="width: 150px; height: 150px; background-color: yellow; overflow: hidden;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae accusamus accusantium facere culpa aut harum nostrum sunt nulla fuga commodi dolorum, eveniet inventore quas voluptatum ad perspiciatis. Voluptas fuga culpa inventore, accusamus exercitationem vitae, doloribus eveniet autem illum laboriosam quos porro pariatur! Expedita velit ea perspiciatis ipsum fugiat, itaque voluptatem.</div>
+  
+  <h3 style="color: tomato;">인라인 레벨</h3>
+  <h5>글씨로 취급되는 태그</h5>
+  <h5>글씨로 취급되기 때문에 width height 적용 불가 /margin과 padding을 위아래로 적용 불가</h5>
+  <h5>인라인레벨이지만, width, height 적용 가능하느 태그도 있긴 함. : img button</h5>
+  <p>button label input span a b i u img</p>
+
+  <h3 style="color: tomato;">블록레벨</h3>
+  <h5>본인의 크기에 상관없이 한 줄 다 차지하는 태그</h5>
+  <p>h div p 시맨틱태그 table-tr ul(ol)-li </p>
+
+  <h3 style="color: tomato;">CSS - display 속성</h3>
+  <button>버튼1</button>
+  <button>버튼2</button>
+
+  <h1 style="width: 100px; height: 100px;">태그1</h1>
+  <h1>태그2</h1>
+
+  <br>
+
+  <div class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, assumenda?</div>
+  <div class="box">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero consequuntur pariatur sequi impedit molestiae officia, adipisci quasi aliquam tempora cumque.</div>
+
+</body>
+</html>
