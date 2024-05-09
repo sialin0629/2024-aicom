@@ -1,0 +1,10 @@
+div {
+  width: 700px; height: 400px;
+  border: 2px solid black;
+  text-align: center;
+  padding: 30px;
+}
+
+img {
+  width: 500px
+}

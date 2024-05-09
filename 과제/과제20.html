@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/과제/과제20.css">
+</head>
+<body>
+  <h1>가고 싶은 해외여행지(a, s, d, f)</h1>
+
+  <div>
+    <img src="https://a.cdn-hotels.com/gdcs/production18/d1838/041ae6b1-0a88-4c22-a648-53a22dd4a006.jpg">
+    <h1 id="name">산토리니</h1>
+  </div>
+
+  <script>
+    let img = document.querySelector("img")
+    let name = document.querySelector("#name")
+
+    document.addEventListener("keyup", (event) => {
+      if (event.code === "KeyA") {
+        img.setAttribute("src", "https://a.cdn-hotels.com/gdcs/production127/d1781/ac9d03ef-22b4-4330-8e8d-695093138cf4.jpg")
+        name.textContent = "일본"
+      }
+      else if (event.code === "KeyS") {
+        img.setAttribute("src", "https://digitalchosun.dizzo.com/site/data/img_dir/2021/11/15/2021111580064_0.jpg")
+        name.textContent = "파리"
+      }
+      else if (event.code === "KeyD") {
+        img.setAttribute("src", "https://mblogthumb-phinf.pstatic.net/MjAxNzA3MTdfODgg/MDAxNTAwMjY0Mjc0MTA2.wLlyTxiPDPu4TCFingTSXgQpdlTN4uMx_ogE0QbUJH8g.fEcnx5nL2vyr1mIJ5Ddh8qss3ENiIpVjbZ-wSMvI5dEg.JPEG.asia_enjoy/%ED%95%B4%EC%99%B8%EC%97%AC%ED%96%89_%EB%86%80%EB%9F%AC%EA%B0%88%EB%A7%8C%ED%95%9C%EA%B3%B3_%ED%95%B4%EC%99%B8%EC%97%AC%ED%96%89%EC%A7%80%EB%B2%A0%EC%8A%A4%ED%8A%B81015.jpg?type=w800")
+        name.textContent = "방콕"
+      }
+      else if (event.code === "KeyF") {
+        img.setAttribute("src", "https://newnlog.com/wp-content/uploads/2023/05/%EC%95%94%EC%8A%A4%ED%85%8C%EB%A5%B4%EB%8B%B4-1.webp")
+        name.textContent = "네덜란드"
+      };
+    })
+  </script>
+</body>
+</html>
