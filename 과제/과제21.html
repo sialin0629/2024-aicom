@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="/과제/과제21.css">
+</head>
+<body>
+  <header>
+    <p>영역 전체가 클릭 가능해야 함</p>
+    <p>전체 만진과 패딩을 0으로 시작</p>
+    <p>box-sizing 설정 후 시작</p>
+
+    <a href="https://www.naver.com/">
+      <img src="/img/로고-Photoroom.png">
+      <h1>AI COMPUTER</h1>
+    </a>
+
+
+
+    <ul>
+      <li><a href="">Main</a></li>
+      <li><a href="">About</a></li>
+      <li><a href="">Top</a></li>
+      <li><a href="">Contact</a></li>
+    </ul>
+  </header>
+
+  <hr>
+
+  <main>
+    <section>
+      <h1>가상클래스를 활용한 UI 디자인</h1>
+      
+      <ul>
+        <li><a href="">목표가 없는 사람은 시간을 허투루 쓴다</a></li>
+        <li><a href="">물질은 내가 원하는 것을 이루기 위한 수단이지, 목표가 될 수 없다.</a></li>
+        <li><a href="">꿈과 직업은 서로 다르다. 달라야 한다.</a></li>
+        <li><a href="">어디에 가치를 두느냐에 따라 인생이 달라진다.</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h1>사진 채우기</h1>
+        <div>
+          <img id="img1" src="data:image/png;base64,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">
+          <p>말조심</p>
+        </div>
+        <div>
+          <img id="img2" src="https://file.mk.co.kr/meet/neds/2017/11/image_readtop_2017_728778_15096755223086725.jpg">
+          <p>신념</p>
+        </div>
+        <div>
+          <img id="img3" src="https://mblogthumb-phinf.pstatic.net/MjAyMDAzMTZfMTMx/MDAxNTg0MzY5MjcxNTA1.5P69Dn3l3e0XPXZayr0aGZpssuEcEGDEJfU4xCzqbN8g.CVnIRetJDu6_aBxML8nU2A5o_EwxLdHwns9qXxHx9eMg.PNG.dnstlrdl473/%ED%8B%B0%EB%AA%A8_%EC%96%BC%EA%B5%B4.PNG?type=w800">
+          <p>티모</p>
+        </div>
+        <div>
+          <img id="img4" src="https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/9791168366619.jpg">
+          <p>은혜</p>
+        </div>
+      </section>
+  </main>
+
+  <hr>
+
+  <footer>
+    <p>본 페이지는 개인 포트폴리오 용도로 작성되었습니다.</p>
+    <p>rbride7@gmail.com || 010-0000-0000</p>
+    <p>Copyright (c) 2023 Redbee All rights reserved.</p>
+  </footer>
+</body>
+</html>

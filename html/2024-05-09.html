@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS 선택자, 가상요소, 가상클래스</title>
+
+  <style>
+    .parent {
+      background-color: paleturquoise;
+    }
+
+    .parent h1 { /* .parent 내부의 모든 h1 */
+      color: rgb(255, 2, 2);
+    }
+
+    .parent > h1 { /* parent의 내부의 자식이 되는 h1 */
+      background-color: rgb(158, 160, 167);
+    }
+
+    section { border: 1px solid #333; }
+
+    /* 가상 클래스: 실제로 style 수정하는 것이 아니라, 특정 상황에서만 css를 가상으로 주는 것 */
+    h1:hover { /* hover: 띄우다. 마우스를 위에 띄우면 발동*/ 
+      background-color: aliceblue;
+    }
+
+    h1:active { /* active: 마우스를 클릭하면 발동 */ 
+      background-color: rgb(15, 112, 112);
+    }
+
+    .parent :nth-child(odd) { /* .parent의 n번째 자식인 h1 */
+      text-decoration: underline; color: rgb(9, 59, 255);
+    }
+
+    .parent > h2:nth-of-type(2) { /* n번째에 해당하는 특정 태그 */
+      font-size: 40pt;
+    }
+
+    input:focus {
+      border: 5px solid #33AAEE;
+    }
+  </style>
+</head>
+<body>
+  <h1>선택자: 내가 원하는 태그를 선택하는 문자</h1>
+  <!-- .parent 내부의 h1만 선택하는 방법?? -->
+  <div class="parent">
+    <h1>박스 안 h1</h1>
+    <h2>h2</h2>
+    <h2>h2</h2>
+    <h1>박스 안 h1</h1>
+    <h1>박스 안 h1</h1>
+    <h1>박스 안 h1</h1>
+    <h2>h2</h2>
+    <h1>박스 안 h1</h1>
+
+    <section>
+      섹션
+      <h1>섹션 내부의 h1</h1>
+    </section>
+  </div>
+
+  <input type="text" style="width: 300px; height: 100px;">
+</body>
+</html>
