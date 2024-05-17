@@ -2,42 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=\, initial-scale=1.0">
   <title>Document</title>
 
   <style>
-    p::before {
-      content: "best";
-      background-color: deeppink; color: #FFF;
-      padding: 3px; margin-right: 5px;
-      border-radius: 8px;
+    body {
+      background-image: url("/img/nayoung1.JPG");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: 30% 30%;
+      background-attachment: fixed;
     }
-
-    p::after {
-      content: "sold out";
-      background-color: blue; color: #fff;
-      padding: 3px; margin-left: 5px;
-      border-radius: 8px;
-    }
-
-    p::selection {
+    .box {
+      width: 500px; height: 500px;
       background-color: tomato;
-    }
-
-    p::first-letter { /* 첫번째 글자 */
-      color: #0f0;
-    }
-
-    p::first-line {
-      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <h1>가상요소</h1>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
+  <div class="box"></div>
 </body>
 </html>

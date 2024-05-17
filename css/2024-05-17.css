@@ -1,0 +1,36 @@
+* {
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  color: #FFF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(to right, #00b09b, #a8ff78);
+  padding: 15px;
+}
+
+input {
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.todo-list {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #d4d4d4;
+}
+
+.like {
+  flex: 1;
+  color: rgb(254, 38, 0);
+}
+
+.content {flex: 8;}
+.manage {flex: 1;}
+.check {color:rgb(60, 211, 60)}
+.clear {color: rgb(230, 54, 54);}
