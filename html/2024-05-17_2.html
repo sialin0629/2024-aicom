@@ -25,5 +25,64 @@
       </div>
     </section>
   </div>
+
+  <script>
+    // input박스에서 enter를 누르면 이벤트가 실행
+    let input = document.querySelector("input")
+    let section = document.querySelector("section")
+
+    // 입력박스에 키보드 이벤트
+    input.addEventListener("keyup", function(e) {
+      
+      //enter를 누른 것을 구별
+      if (e.keyCode == 13 && input.value != "") { // enter를 눌렀고, 공백이 아니면 실행
+        console.log("엔터를 눌렀습니다.")
+
+        // input에 입력된 값을 가져오기
+        let inputValue = input.value;
+        console.log("keyup :", inputValue)
+
+        //todo 리스트에 들어갈 할 일 만들기
+        let box = document.createElement("div")
+        box.classList.add("todo-list")
+
+        let p1 = document.createElement("p")
+        p1.classList.add("like")
+        p1.innerHTML = `<i class="material-icons">favorite_border</i>`
+        box.appendChild(p1)
+
+        let p2 = document.createElement("p")
+        p2.classList.add("content")
+        p2.innerHTML = inputValue
+        box.appendChild(p2)
+
+        let managearea = document.createElement("div")
+        managearea.classList.add("manage")
+        
+        // v 생성
+        let i1 = document.createElement("i")
+        i1.classList.add("material-icons") // 클래스 추가
+        i1.classList.add("check") // 클래스 추가
+        i1.textContent = "check"
+
+        // x 생성
+        let i2 = document.createElement("i")
+        i2.classList.add("material-icons") // 클래스 추가
+        i2.classList.add("clear") // 클래스 추가
+        i2.textContent = "clear"
+
+        managearea.appendChild(i1) // v를 div에 추가
+        managearea.appendChild(i2) // x를 div에 cnrk
+
+        box.appendChild(managearea) // v,x를 담은 div를 부모에게 추가
+
+        // 만든 할 일을 화면에 넣어주기
+        section.appendChild(box)
+        console.log(box)
+
+        input.value = ""
+      }
+    })
+  </script>
 </body>
 </html>
