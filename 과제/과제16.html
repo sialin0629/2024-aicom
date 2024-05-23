@@ -41,48 +41,33 @@
     img.setAttribute("src", "http://ohfun.net/contents/article/images/2018/0627/1530067474523175.jpg");
     img.setAttribute("width", "200");
 
-    v1 = box1.innerHTML
-    v2 = box2.innerHTML
-    v3 = box3.innerHTML
-
-    if (!(img in v1 && img in v2 && img in v3)) {
-
-      start.addEventListener("click", () => {
-
-        ocument.querySelector("#box1").appendChild(img);
+    start.addEventListener("click", () => {
+      if (!box1.contains(img) && !box2.contains(img) && !box3.contains(img)) {
+        box1.appendChild(img);
 
         box1.addEventListener("mouseover", () => {
-        if (event.target === img) {
-          box2.appendChild(img)
+          if (event.target === img) {
+            box2.appendChild(img);
           }
         });
 
         box2.addEventListener("mouseover", () => {
-        if (event.target === img) {
-          box3.appendChild(img)
+          if (event.target === img) {
+            box3.appendChild(img);
           }
         });
 
         box3.addEventListener("mouseover", () => {
-        if (event.target === img) {
-          box1.appendChild(img)
+          if (event.target === img) {
+            box1.appendChild(img);
           }
         });
-
-    
-      
-      });
-    }
+      }
+    });
 
     stop.addEventListener("click", () => {
-
-      box1.innerHTML = "<h1>박스1</h1>" 
-      box2.innerHTML = "<h1>박스2</h1>" 
-      box3.innerHTML = "<h1>박스3</h1>" 
-
-    })
-
-
+      img.remove();
+    });
   </script>
 </body>
 </html>

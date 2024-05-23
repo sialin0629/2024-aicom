@@ -25,6 +25,14 @@ input {
   border-bottom: 1px solid #d4d4d4;
 }
 
+.material-icons {
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-use-select: none;
+  user-select: none;
+}
+
 .like {
   flex: 1;
   color: rgb(254, 38, 0);

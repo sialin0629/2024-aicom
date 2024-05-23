@@ -15,14 +15,6 @@
       <label><input type="text"></label>
     </header>
     <section>
-      <div class="todo-list">
-        <p class="like"><i class="material-icons">favorite_border</i></p>
-        <p class="content">내용</p>
-        <div class="manage">
-          <i class="material-icons check">check</i>
-          <i class="material-icons clear">clear</i>
-        </div>
-      </div>
     </section>
   </div>
 
@@ -48,7 +40,21 @@
 
         let p1 = document.createElement("p")
         p1.classList.add("like")
-        p1.innerHTML = `<i class="material-icons">favorite_border</i>`
+
+        let i = document.createElement("i")
+        i.classList.add('material-icons')
+        p1.appendChild(i)
+        i.textContent = 'favorite_border'
+
+        // 하트 이벤트 걸기
+        i.addEventListener('click', function() {
+          if(i.textContent == 'favorite') {
+            i.textContent = "favorite_border"
+          }
+          else {
+            i.textContent = 'favorite'
+          }
+        })
         box.appendChild(p1)
 
         let p2 = document.createElement("p")
@@ -65,14 +71,28 @@
         i1.classList.add("check") // 클래스 추가
         i1.textContent = "check"
 
+        // v 클릭하면 이벤트 발생
+        i1.addEventListener("click", function(e) {
+          // 글씨 색이 변하고, 취소선이 그어져야 한다 = CSS 수정
+          p2.style.color = "#D2CAC8" // 글씨 색 변경
+          p2.style.textDecoration = 'line-through' // 취소선 긋기
+          i1.style.visibility = 'hidden' // v를 사라지게 하기
+          // i1.style.display = 'none' v를 사라지게 하기
+        })
+
         // x 생성
         let i2 = document.createElement("i")
         i2.classList.add("material-icons") // 클래스 추가
         i2.classList.add("clear") // 클래스 추가
         i2.textContent = "clear"
 
+        // x를 클릭하면 리스트를 삭제
+        i2.addEventListener("click", function(e) {
+          section.removeChild(box)
+        })
+
         managearea.appendChild(i1) // v를 div에 추가
-        managearea.appendChild(i2) // x를 div에 cnrk
+        managearea.appendChild(i2) // x를 div에 추가
 
         box.appendChild(managearea) // v,x를 담은 div를 부모에게 추가
 
@@ -83,6 +103,8 @@
         input.value = ""
       }
     })
+
+    let button = document.querySelector(".material-icons")
   </script>
 </body>
 </html>
