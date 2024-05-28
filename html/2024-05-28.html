@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid</title>
+
+  <style>
+    .container {
+      display: grid;
+      /* grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); */
+      grid-template-columns: 300px 300px 300px;
+      gap: 20px;
+    }
+
+    .item {
+      height: 200px;
+      background-color: skyblue; border: 1px solid #999;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h3>부모: 컨테이너</h3>
+  <h3>자식: 아이템</h3>
+  <h3>그리드 한 칸: 셀</h3>
+
+  <div class="container">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item" style="grid-column: 1/7;"></div>
+  </div>
+</body>
+</html>
