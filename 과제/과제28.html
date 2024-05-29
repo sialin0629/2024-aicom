@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>애국가 타자연습</h1>
+  <p>타이핑을 하여 내용이 일치하면 ok 표시</p>
+  <p>ok 표시를 위한 태그는 span 사용 권장</p>
+
+  <hr>
+
+  <h2>input 이벤트와 조건문을 활용</h2>
+  <h3>값을 입력하면 맞는지 점검함</h3>
+
+  <label> 동해물과
+    <input type="text" id="lyr1">
+    <span id="bool1"></span>
+  </label>
+
+  <br><br>
+
+  <label> 백두산이
+    <input type="text" id="lyr2">
+    <span id="bool2"></span>
+  </label>
+
+  <h2>키보드 이벤트 활용</h2>
+  <h3>Enter를 누르면 확인함</h3>
+
+  <label>마르고
+    <input type="text" id="lyr3">
+    <span id="bool3"></span>
+  </label>
+
+  <br><br>
+
+  <label>닳도록
+    <input type="text" id="lyr4">
+    <span id="bool4"></span>
+  </label>
+
+  <script>
+    const input1 = document.querySelector("#lyr1")
+    const input2 = document.querySelector("#lyr2")
+    const input3 = document.querySelector("#lyr3")
+    const input4 = document.querySelector("#lyr4")
+
+    let bool1 = document.querySelector("#bool1")
+    let bool2 = document.querySelector("#bool2")
+    let bool3 = document.querySelector("#bool3")
+    let bool4 = document.querySelector("#bool4")
+
+    input1.addEventListener("input", () => {
+      if (lyr1.value == "동해물과") {
+        bool1.innerHTML = "ok"
+      }
+      else {
+        bool1.innerHTML = "x"
+      }
+    })
+
+    input2.addEventListener("input", () => {
+      if (lyr2.value == "백두산이") {
+        bool2.innerHTML = "ok"
+      }
+      else {
+        bool2.innerHTML = "x"
+      }
+    })
+
+    input3.addEventListener("keyup", (e) => {
+      if (e.key == "Enter") {
+        if (lyr3.value == "마르고") {
+          bool3.innerHTML = "ok"
+        }
+        else {
+          bool3.innerHTML = "x"
+        }
+      }
+    })
+
+    input4.addEventListener("keyup", (e) => {
+      if (e.key == "Enter") {
+        if (lyr4.value == "닳도록") {
+          bool4.innerHTML = "ok"
+        }
+        else {
+          bool4.innerHTML = "x"
+        }
+      }
+    })
+
+
+  </script>
+</body>
+</html>
