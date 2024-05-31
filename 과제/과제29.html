@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    #outputarea {
+      width: 180px; height: 20px;
+      border: 1px black solid;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <h1>단위 변환</h1>
+  <p>cm을 선택한 단위로 변환합니다</p>
+
+  <label>
+    <input type="text"> cm
+  </label>
+
+  <p>↓↓↓↓↓ 변환 ↓↓↓↓↓</p>
+
+  <br>
+
+  <div id="outputarea">
+    <span id="output"></span>
+  </div>
+
+  <select>
+    <option value="0.393701">inch</option>
+    <option value="10">mm</option>
+    <option value="0.01">m</option>
+  </select>
+
+  <script>
+    const input = document.querySelector("input")
+    const output = document.querySelector("#output")
+    const select = document.querySelector("select")
+
+    select.addEventListener("change", function(event) {
+      Converter = input.value * event.target.value
+      output.innerHTML = Converter
+      console.log(event.currentTarget)
+    })
+  </script>
+</body>
+</html>
