@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>select, checkbox 관련 js</title>
+</head>
+<body>
+  <select name="" id="">
+    <option value="1">셀렉 옵션1</option>
+    <option value="2">셀렉 옵션2</option>
+    <option value="3">셀렉 옵션3</option>
+    <option value="4">셀렉 옵션4</option>
+  </select>
+
+  <label> <input type="checkbox" value="치킨" name="음식">치킨</label>
+  <!-- <label> <input type="text" value="치킨" name="음식">피자</label> -->
+
+  <script>
+    const select = document.querySelector("select")
+    console.log(select.options) // select의 option들 (변수)
+    console.log(select.options[1]) // select의 option들 (태그)
+    console.log(select.options[1].value) // select의 option들 (태그)
+    console.log(select.options[1].textContent) // select의 option들 (태그)
+    console.log(select.options.selectedIndex)// 내가 선택한 option의 인덱스 번호 (태그)
+    console.log(select.value) // 내가 선택한 option의 value
+
+    console.log("_______↓체크박스 관련 출력들_______")
+    const checkbox = document.querySelector("input")
+    console.log(checkbox.checked)
+    console.log(checkbox.name)
+    console.log(checkbox.value)
+  </script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    * {
+      margin: 0; padding: 0;
+      box-sizing: border-box;
+    }
+
+    header {
+      width: 100%; height: 80px;
+      background-color: #016141;
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+    }
+
+    #logo > h1 {
+      color: #FFF;
+    }
+    
+    #inputarea select{
+      width: 200px; height: 40px;
+      border: none;
+      border-radius: 10px;
+      padding: 10px;
+      font-size: 13pt;
+      font-weight: 700;
+    }
+
+    main {
+      text-align: center;
+      padding: 30px;
+    }
+
+    .temp {
+      font-size: 54pt;
+    }
+
+    main p {
+      font-size: 18pt;
+      font-weight: 600;
+      line-height: 50px;
+    }
+
+
+  </style>
+</head>
+<body>
+  <div id="container">
+    <header>
+      <div id="logo">
+        <h1>날씨 검색</h1>
+      </div>
+
+      <div id="inputarea">
+        <select name="" id="">
+          <option value="seoul">서울</option>
+          <option value="busan">부산</option>
+          <option value="tokyo">도쿄</option>
+          <option value="osaka">오사카</option>
+          <option value="kyoto">교토</option>
+          <option value="barcelona">바르셀로나</option>
+        </select>
+      </div>
+    </header>
+
+    <main>
+      <p class="city">도시이름</p>
+
+      <h1><span class="temp">??</span>°C</h1>
+
+      <img src="https://openweathermap.org/img/wn/01d@2x.png">
+
+      <p>체감온도 : <span class="feel">??</span></p>
+      <p>습도 : <span class="humidity">??</span></p>
+
+    </main>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    let 선택한도시
+
+    let 셀렉트 = document.querySelector("select")
+    셀렉트.addEventListener("change", function(event) {
+      console.log(event.target.value)
+      선택한도시 = event.target.value
+    
+
+  
+      axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${선택한도시}&appid=31e6ac333a8783d990c22d08dcd177b0`)
+      .then(function (response) {
+        // 성공 핸들링
+        console.log(response);
+        console.log(response.data.main);
+  
+        let 도시이름 = document.querySelector(".city")
+        도시이름.textContent = response.data.name
+  
+        console.log("체감온도", response.data.main.feels_like-273);
+        let 체감온도 = (response.data.main.feels_like-273).toFixed(2)
+        let 온도지정 = document.querySelector(".feel")
+        온도지정.textContent = 체감온도
+  
+        console.log("습도", response.data.main.humidity);
+        let 습도 = response.data.main.humidity
+        let 습도지정 = document.querySelector(".humidity")
+        습도지정.textContent = 습도
+  
+  
+        console.log("기온", response.data.main.temp-273);
+        let 기온 = (response.data.main.temp-273).toFixed(2)
+        let 기온지정 = document.querySelector(".temp")
+        기온지정.textContent = 기온
+  
+        console.log("아이콘 코드", response.data.weather[0].icon)
+        let 아이콘코드 = response.data.weather[0].icon
+  
+        let 날씨아이콘 = document.querySelector("img")
+        날씨아이콘.setAttribute("src", `https://openweathermap.org/img/wn/${아이콘코드}@2x.png`)
+      })
+    })
+  </script>
+</body>
+</html>

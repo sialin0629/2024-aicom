@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9회차 실습1 - string의 split 활용</title>
+
+    <style>
+        input {padding: 10px; }
+        button {padding: 10px; }
+    </style>
+</head>
+<body>
+  <h1>입대일은 만 19세가 되는 날을 기준</h1>
+  <p>------------------------가이드: 아래 내용 참고------------------------</p>
+  <h2><span class="year1"></span>년생 및 그 이전 : 무조건 입대 가능</h2>
+  <h2><span class="year2"></span>년생 : <span class="month"></span>월 이전 출생자는 무조건 입대 가능</h2>
+  <h2><span class="year2"></span>년 <span class="month"></span>월 생 : <span class="day"></span>일 이전 출생자는 입대 가능</h2>
+
+  <hr>
+  
+  <input type="text" class="birth" placeholder="양식: 2001.1.1">  <button>계산</button>
+
+  <script>
+    let today = new Date();
+    let todayyear = today.getFullYear();
+    let todaymonth = today.getMonth() + 1;
+    let todaydate = today.getDate();
+
+    let birthinput = document.querySelector(".birth")
+    let button = document.querySelector("button")
+
+    const spanyear1 = document.querySelector(".year1")
+    const spanyear2 = document.querySelectorAll(".year2")
+    const spanmonth = document.querySelectorAll(".month")
+    const spandate = document.querySelector(".day")
+
+    spanyear1.textContent = todayyear - 20;
+    for (let i = 0; i < spanyear2.length; i++) {
+      spanyear2[i].textContent = todayyear - 19;
+    }
+    for (let i = 0; i < spanmonth.length; i++) {
+      spanmonth[i].textContent = todaymonth;
+    }
+    spandate.textContent = `0${todaydate}`;
+
+
+    button.addEventListener("click", function(event){ 
+      birth = birthinput.value.split(".")
+
+      if ((todayyear - Number(birth[0])) < 19){
+        console.log("입대 불가능")
+      }
+      else {
+        if ((todaymonth > Number(birth[1]))) {
+          console.log("입대 가능")
+        }
+        else if ((todaymonth < Number(birth[1]))) {
+          console.log("입대 불가능")
+        }
+        else if ((todaymonth == birth[1])) { 
+          if ((todaydate > Number(birth[2]))) {
+            console.log("입대 불가능")
+          }
+          else {
+            console.log("입대 가능")
+          }
+        }
+      }
+    })
+
+    
+
+  </script>
+</body>
+</html>

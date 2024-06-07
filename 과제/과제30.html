@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>주문서</h1>
+  <h3>먹고 싶은 메뉴를 선택합니다</h3>
+
+  <label for="">
+  <input id="chicken" type="checkbox" value="16000" name="음식">
+  치킨 16,000 \
+  </label>
+
+  <br><br>
+
+  <label for="">
+  <input id="sushi" type="checkbox" value="20000" name="음식">
+  초밥 20,000 \
+  </label>
+
+  <br><br>
+
+  <label for="">
+  <input id="soondae" type="checkbox" value="5000" name="음식">
+  순대 5,000 \
+  </label>
+
+  <hr>
+
+  <h2>가격 : <span id="cost">0</span></h2>
+
+  <script>
+    const menu = document.querySelectorAll('input');
+    const cost = document.querySelector("#cost");
+    let price = 0;
+
+    menu.forEach(item => item.addEventListener("change", () => {
+      price += item.checked ? parseInt(item.value) : -parseInt(item.value);
+      cost.textContent = price;
+    }));
+
+  </script>
+</body>
+</html>
