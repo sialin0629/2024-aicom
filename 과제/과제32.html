@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9회차 실습 - Math 객체로 로또 번호 만들기</title>
+
+    <style>
+        * {
+          margin: 0; padding: 0;
+          box-sizing: border-box;
+        }
+
+        .container{
+            width: 1000px; margin: 0 auto;
+            text-align: center;
+        }
+
+        table {
+          border-collapse: collapse;
+          display: inline-block;
+        }
+
+        #num td {
+          height: 40px;
+          background-color: aquamarine;
+        }
+
+        #lottonum td {
+          width: 300px; height: 100px;
+          background-color: rgb(192, 192, 239);
+        }
+    </style>
+</head>
+<body>
+  <div class="container">
+  <br><br>
+  <h1>로또 당첨 번호</h1>
+  <br>
+  <h2>1~45의 숫자 범위 6개 뽑기</h2>
+  <h2>중복된 숫자는 입력되지 않음</h2>
+  <br><br>
+    
+
+  <table>
+    <tr id="num">
+      <td>1번</td>
+      <td>2번</td>
+      <td>3번</td>
+      <td>4번</td>
+      <td>5번</td>
+      <td>6번</td>
+    </tr>
+
+    <tr id="lottonum">
+      <td><span id="out1"></span></td>
+      <td><span id="out2"></span></td>
+      <td><span id="out3"></span></td>
+      <td><span id="out4"></span></td>
+      <td><span id="out5"></span></td>
+      <td><span id="out6"></span></td>
+    </tr>
+  </table>
+
+    
+  <script>
+    let lotto = [];
+
+    while (lotto.length < 7) {  
+      let randomnum = Math.floor(Math.random() * 10 + 1)
+        if(lotto.indexOf(randomnum) < 0){
+        lotto.push(randomnum);
+      }
+    }
+
+    for (let i = 0; i < lotto.length; i++) {
+      document.getElementById("out" + (i+1)).innerHTML = lotto[i]
+    }
+  </script>
+</body>
+</html>

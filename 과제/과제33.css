@@ -1,0 +1,51 @@
+* {
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+}
+
+#contanier {
+  text-align: center;
+}
+
+main {
+  width: 920px;
+  display: flex;
+  gap: 10px;
+  margin: 0 auto;
+}
+
+.box {
+  width: 300px; height: 200px;
+  overflow: hidden;
+}
+
+img {
+  width: 300px; height: 200px;
+}
+
+.detail {
+  width: 300px; height: 200px;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  padding-top: 25px;
+  color: white;
+  opacity: 0;
+  transition: all 0.5s ease-out;
+}
+
+.star {
+  color: yellow;
+}
+
+.box:hover .detail{
+  transform: translate(0px, -205px);
+  opacity: 1;
+}
+
+.tip {
+  margin: 0 auto;
+}
+
+#guide {
+  background-color: rgb(201, 255, 201);
+}
