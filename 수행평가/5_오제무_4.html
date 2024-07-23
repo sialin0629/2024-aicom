@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5_오제무</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .container {
+      height: 100%;
+      min-height: 100%;
+      padding-bottom: 100px;
+    }
+
+    header {
+      width: 1000px;
+      height: 200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    #logo {
+      margin-top: 20px;
+    }
+
+    #logo h1 {
+      font-size: 40pt;
+    }
+
+    #logo_des p {
+      font-size: 13pt;
+      color: silver;
+    }
+
+    #inputarea {
+      width: 400px;
+      height: 35px;
+      margin: 0 auto;
+      margin-top: 30px;
+      border: 1px solid silver;
+      border-radius: 10px;
+    }
+
+    #inputarea input {
+      width: 360px;
+      height: 30px;
+      border: none;
+      border-radius: 10px;
+      padding: 10px;
+      padding-top: 14px;
+      padding-left: 45px;
+      text-align: center;
+      color: rgb(112, 112, 112);
+    }
+
+    #inputarea input:focus {
+      outline: none;
+    }
+
+    #inputarea select {
+      width: 30px;
+      text-align: center;
+      border: none;
+      appearance: none;
+      color: rgb(112, 112, 112);
+    }
+
+    #inputarea select:focus {
+      outline: none;
+    }
+
+    main {
+      width: 800px;
+      height: 600px;
+      margin: 0 auto;
+      margin-top: 10px;
+      margin-bottom: 80px;
+      display: grid;
+      grid-template-columns: 500px 300px;
+    }
+
+    #detail {
+      width: 500px;
+      height: 300px;
+      float: left;
+    }
+
+    .cityarea {
+      width: 500px;
+      height: 64px;
+      font-size: 18pt;
+      display: flex;
+    }
+
+    .cityarea img {
+      width: 60px;
+      height: 40px;
+      margin-top: 15px;
+      margin-left: 10px;
+      border: 1px solid rgb(219, 219, 219);
+    }
+
+    .temparea {
+      width: 250px;
+      height: 150px;
+      font-size: 40pt;
+      float: left;
+    }
+
+    .feels_likearea {
+      width: 250px;
+      height: 150px;
+      float: left;
+      font-size: 20pt;
+      font-weight: 900;
+      padding-top: 25px;
+      padding-left: 10px;
+    }
+
+    .humidityarea {
+      width: 250px;
+      height: 50px;
+      float: left;
+      font-size: 15pt;
+      font-weight: 600;
+    }
+
+    .windspeedarea {
+      width: 250px;
+      height: 50px;
+      float: left;
+      font-size: 15pt;
+      font-weight: 600;
+    }
+
+    #imgarea {
+      float: right;
+      width: 300px;
+      height: 300px;
+      background-image: url(https://data.si.re.kr/sites/default/files/2021-06/06P02903Aa42000.jpg);
+      background-size: cover;
+      border-radius: 20px;
+    }
+
+    #imgarea img {
+      width: 150px;
+      height: 150px;
+      margin: 75px;
+    }
+
+    #details {
+      width: 800px;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 10px;
+      justify-content: space-between;
+    }
+
+    .item {
+      width: 190px;
+      height: 190px;
+      background-color: rgb(231, 231, 231);
+      border-radius: 20px;
+      padding: 25px;
+    }
+
+    .itme1 {
+      width: 380px;
+      display: flex;
+      padding-left: 30px;
+    }
+
+    .itme1 img {
+      margin-left: 50px;
+    }
+
+    .item h1 {
+      font-size: 20pt;
+    }
+
+    .item2 h1 {
+      font-size: 25pt;
+    }
+
+    .item2 h2 {
+      font-size: 20pt;
+      margin-top: 10px;
+    }
+
+    .item3 {
+      padding-top: 22px;
+    }
+
+    footer {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      height: 10px;
+      position : absolute;
+      transform : translateY(0%);
+    }
+
+    .des1 {
+      margin-top: 20px;
+      margin-left: 20px;
+      font-size: 10pt;
+      font-weight: 200;
+    }
+    
+    .des2 {
+      margin-top: 20px;
+      margin-right: 20px;
+      font-size: 10pt;
+      font-weight: 200;
+    }
+
+
+
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div id="logo">
+        <h1>AIW</h1>
+      </div>
+
+      <div id="logo_des">
+        <p>AIcomputer Weather site</p>
+      </div>
+
+      <div id="inputarea">
+        <input type="text" placeholder="도시를 입력하세요">
+        <select name="city" id="select">
+          <option value="" selected disabled hidden>▼</option>
+          <option value="seoul">서울</option>
+          <option value="chungju">충주</option>
+          <option value="busan">부산</option>
+          <option value="tokyo">도쿄</option>
+          <option value="fukuoka">후쿠오카</option>
+        </select>
+      </div>
+    </header>
+
+    <main>
+
+      <div id="detail">
+        <div class="cityarea">
+          <h1 id="city">CITY NAME</h1>
+          <img id="country" src="https://i.namu.wiki/i/2ySwTDCC04jQeqKZEZ-HkeIdT91knN8WvOIiwkQZN-Gh5wG6e7PpdxJHQ73Lx_T5E_ZNByh1jAMJY4kbKL-oIg.svg">
+        </div>
+
+        <div class="temparea">
+          <h1><span class="temp">??</span>°C</h1>
+        </div>
+
+        <div class="feels_likearea">
+          <p>Feels like</p>
+          <p><span class="feel">??</span>°C</p>
+        </div>
+
+        <div class="humidityarea">
+          <p>Humidity</p>
+          <p><span class="humidity">??</span>%</p>
+        </div> 
+
+        <div class="windspeedarea">
+          <p>Windspeed</p>
+          <p><span class="windspeed">??</span>m/s</p>
+        </div>
+      </div>
+
+      <div id="imgarea">
+      </div>
+
+      
+ 
+      <div id="details">
+        <div class="item itme1">
+          <div id="temp_min_max">
+            <h1>Temp max </h1>
+            <h2><span id="temp_max">??</span>°C</h2>
+            <h1>Temp min </h1>
+            <h2><span id="temp_min">??</span>°C</h2>
+          </div>
+
+          <img class="icon" src="https://openweathermap.org/img/wn/01d@2x.png">
+        </div>
+
+        <div class="item item2">
+          <h1>Rainfall</h1>
+          <h2><span id="rainfall">- </span>mm</h2>
+        </div>
+
+        <div class="item item3">
+          <h1>Latitude</h1>
+          <h2><span id="lat">??</span>°</h2>
+          <h1>Longitude</h1>
+          <h2><span id="lon">??</span>°</h2>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="des1">
+        <p>본 사이트는 상업적 목적이 아닌 개인 포트 폴리오로 제작되었습니다.</p>
+        <p>주소 | 서울특별시 종로구 종로58길 28</p>
+        <p>전화 | 02-2237-0465</p>
+        <p>Copyright (c) 종로산업정보학교 AIcomputer Department 오제무 All rights reserved.</p>
+      </div>
+      
+      <div class="des2">
+        <p>source : Axios, OpenWeatherMap</p>
+        <p>utilization program : Trello, Figma</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+      let select_city
+
+      let input = document.querySelector("input")
+
+      input.addEventListener("keydown", function(e){ 
+        if(e.keyCode == 13){
+          console.log(event.target.value)
+          select_city = event.target.value
+
+          if (event.target.value == "seoul") {
+            document.getElementById('imgarea').style.backgroundImage  = "url(https://data.si.re.kr/sites/default/files/2021-06/06P02903Aa42000.jpg)"
+          }
+          else if (event.target.value == "chungju") {
+            document.getElementById('imgarea').style.backgroundImage = "url(https://www.jbnews.com/news/photo/202111/1351096_1152618_3836.jpg)"
+          }
+          else if (event.target.value == "busan") {
+            document.getElementById('imgarea').style.backgroundImage = "url(https://visitbusan.net/uploadImgs/files/cntnts/20191229153530528)"
+          }
+          else if (event.target.value == "tokyo") {
+            document.getElementById('imgarea').style.backgroundImage = "url(https://tourimage.interpark.com//Spot/200/17226/201606/6360054435012908830.jpg)"
+          }
+          else if (event.target.value == "fukuoka") {
+            document.getElementById('imgarea').style.backgroundImage = "url(https://d2mgzmtdeipcjp.cloudfront.net/files/good/2020/04/25/15878000229322.jpg)"
+          }
+          else {
+            document.getElementById('imgarea').style.backgroundImage = "url(https://cdn.pixabay.com/photo/2023/02/04/09/20/castle-7766794_1280.jpg)"
+          }
+
+          axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${select_city}&appid=31e6ac333a8783d990c22d08dcd177b0`)
+          .then(function (response) {
+            console.log(response);
+            console.log(response.data.main);
+          
+            let city = document.querySelector("#city")
+            city.textContent = response.data.name
+
+            let country = document.querySelector("#country")
+            let result = response.data.sys.country.toLowerCase();
+            country.setAttribute("src", `https://flagpedia.net/data/flags/w580/${result}.jpg`)
+
+
+            let temp_data = (response.data.main.temp-273).toFixed(0)
+            let temp = document.querySelector(".temp")
+            temp.textContent = temp_data
+
+            let temp_max_data = (response.data.main.temp_max-273).toFixed(0)
+            let temp_max = document.querySelector("#temp_max")
+            temp_max.textContent = temp_max_data
+
+            let temp_min_data = (response.data.main.temp_min-273).toFixed(0)
+            let temp_min = document.querySelector("#temp_min")
+            temp_min.textContent = temp_min_data
+          
+            let feels_like_data = (response.data.main.feels_like-273).toFixed(0)
+            let feels_like = document.querySelector(".feel")
+            feels_like.textContent = feels_like_data
+          
+            let humidity_data = response.data.main.humidity
+            let humidity = document.querySelector(".humidity")
+            humidity.textContent = humidity_data
+
+            let windspeed_data = response.data.wind.speed
+            let windspeed = document.querySelector(".windspeed")
+            windspeed.textContent = windspeed_data
+          
+            let icon_code = response.data.weather[0].icon
+            let icon = document.querySelector(".icon")
+            icon.setAttribute("src", `https://openweathermap.org/img/wn/${icon_code}@2x.png`)
+
+            let lat_data = response.data.coord.lat.toFixed(2)
+            let lat = document.querySelector("#lat")
+            lat.textContent = lat_data
+
+            let lon_data = response.data.coord.lon.toFixed(2)
+            let lon = document.querySelector("#lon")
+            lon.textContent = lon_data
+
+            let rainfall_data;
+
+            try {
+              rainfall_data = response.data.rain["1h"];
+            } catch (err) {
+              rainfall_data = "NaN";
+            }
+
+            console.log(rainfall_data)
+            let rainfall = document.querySelector("#rainfall")
+            if (rainfall_data == "NaN") {
+              rainfall.textContent = "- "
+            }
+            else{
+              rainfall.textContent = rainfall_data
+            }
+          
+          })
+        }
+      })
+
+      let select = document.querySelector("select")
+      select.addEventListener("change", function(event) {
+        console.log(event.target.value)
+        select_city = event.target.value
+
+        if (event.target.value == "seoul") {
+          document.getElementById('imgarea').style.backgroundImage  = "url(https://data.si.re.kr/sites/default/files/2021-06/06P02903Aa42000.jpg)"
+        }
+        else if (event.target.value == "chungju") {
+          document.getElementById('imgarea').style.backgroundImage = "url(https://www.jbnews.com/news/photo/202111/1351096_1152618_3836.jpg)"
+        }
+        else if (event.target.value == "busan") {
+          document.getElementById('imgarea').style.backgroundImage = "url(https://visitbusan.net/uploadImgs/files/cntnts/20191229153530528)"
+        }
+        else if (event.target.value == "tokyo") {
+          document.getElementById('imgarea').style.backgroundImage = "url(https://tourimage.interpark.com//Spot/200/17226/201606/6360054435012908830.jpg)"
+        }
+        else if (event.target.value == "fukuoka") {
+          document.getElementById('imgarea').style.backgroundImage = "url(https://d2mgzmtdeipcjp.cloudfront.net/files/good/2020/04/25/15878000229322.jpg)"
+        }
+        else {
+          document.getElementById('imgarea').style.backgroundImage = "url(https://cdn.pixabay.com/photo/2023/02/04/09/20/castle-7766794_1280.jpg)"
+        }
+
+        axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${select_city}&appid=31e6ac333a8783d990c22d08dcd177b0`)
+        .then(function (response) {
+          console.log(response);
+          console.log(response.data.main);
+    
+          let city = document.querySelector("#city")
+          city.textContent = response.data.name
+
+          let country = document.querySelector("#country")
+          let result = response.data.sys.country.toLowerCase();
+          country.setAttribute("src", `https://flagpedia.net/data/flags/w580/${result}.jpg`)
+
+
+          let temp_data = (response.data.main.temp-273).toFixed(0)
+          let temp = document.querySelector(".temp")
+          temp.textContent = temp_data
+
+          let temp_max_data = (response.data.main.temp_max-273).toFixed(0)
+          let temp_max = document.querySelector("#temp_max")
+          temp_max.textContent = temp_max_data
+
+          let temp_min_data = (response.data.main.temp_min-273).toFixed(0)
+          let temp_min = document.querySelector("#temp_min")
+          temp_min.textContent = temp_min_data
+    
+          let feels_like_data = (response.data.main.feels_like-273).toFixed(0)
+          let feels_like = document.querySelector(".feel")
+          feels_like.textContent = feels_like_data
+    
+          let humidity_data = response.data.main.humidity
+          let humidity = document.querySelector(".humidity")
+          humidity.textContent = humidity_data
+
+          let windspeed_data = response.data.wind.speed
+          let windspeed = document.querySelector(".windspeed")
+          windspeed.textContent = windspeed_data
+    
+          let icon_code = response.data.weather[0].icon
+          let icon = document.querySelector(".icon")
+          icon.setAttribute("src", `https://openweathermap.org/img/wn/${icon_code}@2x.png`)
+
+          
+          let lat_data = response.data.coord.lat.toFixed(2)
+          let lat = document.querySelector("#lat")
+          lat.textContent = lat_data
+
+          let lon_data = response.data.coord.lon.toFixed(2)
+          let lon = document.querySelector("#lon")
+          lon.textContent = lon_data
+
+          let rainfall_data;
+
+          try {
+            rainfall_data = response.data.rain["1h"];
+          } catch (err) {
+            rainfall_data = "NaN";
+          }
+          
+          console.log(rainfall_data)
+          let rainfall = document.querySelector("#rainfall")
+          if (rainfall_data == "NaN") {
+            rainfall.textContent = "- "
+          }
+          else{
+            rainfall.textContent = rainfall_data
+          }
+
+        })
+        this.selectedIndex = 0;
+      })
+    </script>
+  </div>
+</body>
+</html>

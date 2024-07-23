@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>타임 함수</title>
+
+  <style>
+    .box {
+      width: 300px; height: 300px;
+      background-color: skyblue;
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+
+  <script>
+    let box = document.querySelector(".box")
+
+    // setInterval. interval 간격
+
+    let time = 1
+    setInterval(function(){
+      console.log(time)
+      time += 1
+
+      box.textContent = `${time}초`
+    }, 1000)
+
+    let s
+    s = 5
+    // setTimeout.
+    let timeout = setTimeout(() => {
+      alert(`${s}초 지났음`)
+    }, s * 1000);
+
+    clearInterval(timeout)
+
+  </script>
+</body>
+</html>
