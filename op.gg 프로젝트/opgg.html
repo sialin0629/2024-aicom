@@ -20,22 +20,26 @@
     </div>
 
     <!-- 플레이어 정보 -->
-    <section id="player_menu">
+    <div id="player_menu">
 
       <div id="player">
-        <img src="https://opgg-static.akamaized.net/meta/images/profile_icons/profileIcon6636.jpg" alt="">
+        <div id="player_icon">
+          <img src="https://opgg-static.akamaized.net/meta/images/profile_icons/profileIcon6636.jpg" alt="">
+          <div id="player_level">100</div>
+        </div>
+        
         <div id="player_info">
           <h1>닉네임</h1>
-          <h1>level <span>100</span></h1>
         </div>
+
       </div>
-    </section>
+    </div>
 
     <div id="integrate">
 
       <div id="rank_info">
         <section id="solo_rank">
-          <h5>솔로 랭크</h5>
+          <h5>솔로랭크</h5>
           <hr>
           <img src="https://opgg-static.akamaized.net/images/medals_new/challenger.png?image=q_auto,f_webp,w_144&v=1721451321478" alt="솔랭티어">
           <span class="win">0</span>승 <span class="lose">0</span>패 / <span class="rate">0</span> %
@@ -107,37 +111,68 @@
         </section>
   
         <!-- 20개 게임 각각의 정보 -->
-        <section id="game20_menu">
+        <div id="game20_menu">
           <div class="game victory">
 
-            <div class="mod">자유랭크</div>
+            <div class="simple_data">
+              <h5 class="mod">자유랭크</h5>
+              <p class="time">5시간 전</p>
+              <hr>
+              <p class="result">패배</p>
+              <p class="playtime">15분 13초</p>
+            </div>
+            
 
             <div class="champion">
-              <img src="https://opgg-static.akamaized.net/meta/images/lol/14.14.1/champion/Aurora.png" alt="chamption">
-              <p>레벨 <span>0</span></p>
+              <div class="game_data">
+                <img src="https://opgg-static.akamaized.net/meta/images/lol/14.14.1/champion/Aurora.png" class="champion_icon" alt="chamption">
+
+                <div class="champion_level">10</div>
+
+                <img src="https://s-lol-web.op.gg/images/icon/icon-position-adc.svg" class="champion_position" alt="">
+
+                <div class="spell">
+                  <div class="spell_div spell1">
+                    <img src="https://opgg-static.akamaized.net/meta/images/lol/14.14.1/spell/SummonerBarrier.png" class="d_spell" alt="">
+                  </div>
+
+                  <div class="spell_div spell2">
+                    <img src="https://opgg-static.akamaized.net/meta/images/lol/14.14.1/spell/SummonerFlash.png" class="f_spell" alt="">
+                  </div>
+                </div>
+
+                <div class="rune">
+                  <div class="rune_div rune_1">
+                    <img src="https://opgg-static.akamaized.net/meta/images/lol/14.14.1/perk/8021.png" class="rune1" alt="">
+                  </div>
+                  
+                  <div class="rune_div rune_2">
+                    <img src="https://opgg-static.akamaized.net/meta/images/lol/14.14.1/perkStyle/8200.png" class="rune2" alt="">
+                  </div>
+                </div>
+  
+                <div class="score1">
+                  <p class="kda_area1"><span class="kill">0</span> / <span class="death">0</span> / <span class="assist">0</span></p>
+                  <p class="kda_area2"><span class="kda">0.0</span> KDA</p>
+                </div>
+              </div>
+
+
+              <div class="item">
+                <img src="https://opgg-static.akamaized.net/meta/images/lol/14.14.1/item/3087.png" class="item1" alt="item1">
+                <img src="https://opgg-static.akamaized.net/meta/images/lol/14.14.1/item/3087.png" class="item2" alt="item2">
+                <img src="https://opgg-static.akamaized.net/meta/images/lol/14.14.1/item/3087.png" class="item3" alt="item3">
+                <img src="https://opgg-static.akamaized.net/meta/images/lol/14.14.1/item/3087.png" class="item4" alt="item4">
+                <img src="https://opgg-static.akamaized.net/meta/images/lol/14.14.1/item/3087.png" class="item5" alt="item5">
+                <img src="https://opgg-static.akamaized.net/meta/images/lol/14.14.1/item/3087.png" class="item6" alt="item6">
+                <img src="https://opgg-static.akamaized.net/meta/images/lol/14.14.1/item/3340.png" class="item7" alt="item7">
+              </div>
             </div>
 
-            <div class="multikill">펜타킬</div>
-
-            <div class="rune">
-              <img src="https://opgg-static.akamaized.net/meta/images/lol/14.14.1/perk/8021.png" class="rune1" alt="">
-              <img src="https://opgg-static.akamaized.net/meta/images/lol/14.14.1/perkStyle/8200.png" class="rune2" alt="">
-            </div>
-
-            <div class="score">
-              <p><span class="kill">0</span> / <span class="death">0</span> / <span class="assist">0</span></ㅔ>
-              <p><span class="kda">0.0</span></p>
+            <div class="score2">
               <p>GOLD <span class="gold">0</span></p>
               <p>CS <span class="cs">0</span></p>
-            </div>
-
-            <div class="item">
-              <img src="https://opgg-static.akamaized.net/meta/images/lol/14.14.1/item/3087.png" class="item1" alt="item1">
-              <img src="https://opgg-static.akamaized.net/meta/images/lol/14.14.1/item/3087.png" class="item2" alt="item2">
-              <img src="https://opgg-static.akamaized.net/meta/images/lol/14.14.1/item/3087.png" class="item3" alt="item3">
-              <img src="https://opgg-static.akamaized.net/meta/images/lol/14.14.1/item/3087.png" class="item4" alt="item4">
-              <img src="https://opgg-static.akamaized.net/meta/images/lol/14.14.1/item/3087.png" class="item5" alt="item5">
-              <img src="https://opgg-static.akamaized.net/meta/images/lol/14.14.1/item/3087.png" class="item6" alt="item6">
+              <div class="multikill">펜타킬</div>
             </div>
 
             <div class="users">
@@ -147,7 +182,6 @@
                 <p class="user3">유저3</p>
                 <p class="user4">유저4</p>
                 <p class="user5">유저5</p>
-                <p class="user6">유저6</p>
               </div>
 
               <div class="team2">
@@ -156,7 +190,6 @@
                 <p class="user3">유저3</p>
                 <p class="user4">유저4</p>
                 <p class="user5">유저5</p>
-                <p class="user6">유저6</p>
               </div>
             </div>
             
@@ -164,34 +197,64 @@
 
           <div class="game defeat">
 
-            <div class="mod">자유랭크</div>
+            <div class="simple_data">
+              <h5 class="mod">자유랭크</h5>
+              <p class="time">5시간 전</p>
+              <hr>
+              <p class="result">패배</p>
+              <p class="playtime">15분 13초</p>
+            </div>
 
             <div class="champion">
-              <img src="https://opgg-static.akamaized.net/meta/images/lol/14.14.1/champion/Aurora.png" alt="chamption">
-              <p>레벨 <span>0</span></p>
+              <div class="game_data">
+                <img src="https://opgg-static.akamaized.net/meta/images/lol/14.14.1/champion/Aurora.png" class="champion_icon" alt="chamption">
+
+                <div class="champion_level">10</div>
+
+                <img src="https://s-lol-web.op.gg/images/icon/icon-position-adc.svg" class="champion_position" alt="">
+
+                <div class="spell">
+                  <div class="spell_div spell1">
+                    <img src="https://opgg-static.akamaized.net/meta/images/lol/14.14.1/spell/SummonerBarrier.png" class="d_spell" alt="">
+                  </div>
+
+                  <div class="spell_div spell2">
+                    <img src="https://opgg-static.akamaized.net/meta/images/lol/14.14.1/spell/SummonerFlash.png" class="f_spell" alt="">
+                  </div>
+                </div>
+
+                <div class="rune">
+                  <div class="rune_div rune_1">
+                    <img src="https://opgg-static.akamaized.net/meta/images/lol/14.14.1/perk/8021.png" class="rune1" alt="">
+                  </div>
+                  
+                  <div class="rune_div rune_2">
+                    <img src="https://opgg-static.akamaized.net/meta/images/lol/14.14.1/perkStyle/8200.png" class="rune2" alt="">
+                  </div>
+                </div>
+  
+                <div class="score1">
+                  <p class="kda_area1"><span class="kill">0</span> / <span class="death">0</span> / <span class="assist">0</span></p>
+                  <p class="kda_area2"><span class="kda">0.0</span> KDA</p>
+                </div>
+              </div>
+
+
+              <div class="item">
+                <img src="https://opgg-static.akamaized.net/meta/images/lol/14.14.1/item/3087.png" class="item1" alt="item1">
+                <img src="https://opgg-static.akamaized.net/meta/images/lol/14.14.1/item/3087.png" class="item2" alt="item2">
+                <img src="https://opgg-static.akamaized.net/meta/images/lol/14.14.1/item/3087.png" class="item3" alt="item3">
+                <img src="https://opgg-static.akamaized.net/meta/images/lol/14.14.1/item/3087.png" class="item4" alt="item4">
+                <img src="https://opgg-static.akamaized.net/meta/images/lol/14.14.1/item/3087.png" class="item5" alt="item5">
+                <img src="https://opgg-static.akamaized.net/meta/images/lol/14.14.1/item/3087.png" class="item6" alt="item6">
+                <img src="https://opgg-static.akamaized.net/meta/images/lol/14.14.1/item/3340.png" class="item7" alt="item7">
+              </div>
             </div>
 
-            <div class="multikill">펜타킬</div>
-
-            <div class="rune">
-              <img src="https://opgg-static.akamaized.net/meta/images/lol/14.14.1/perk/8021.png" class="rune1" alt="">
-              <img src="https://opgg-static.akamaized.net/meta/images/lol/14.14.1/perkStyle/8200.png" class="rune2" alt="">
-            </div>
-
-            <div class="score">
-              <p><span class="kill">0</span> / <span class="death">0</span> / <span class="assist">0</span></ㅔ>
-              <p><span class="kda">0.0</span></p>
+            <div class="score2">
               <p>GOLD <span class="gold">0</span></p>
               <p>CS <span class="cs">0</span></p>
-            </div>
-
-            <div class="item">
-              <img src="https://opgg-static.akamaized.net/meta/images/lol/14.14.1/item/3087.png" class="item1" alt="item1">
-              <img src="https://opgg-static.akamaized.net/meta/images/lol/14.14.1/item/3087.png" class="item2" alt="item2">
-              <img src="https://opgg-static.akamaized.net/meta/images/lol/14.14.1/item/3087.png" class="item3" alt="item3">
-              <img src="https://opgg-static.akamaized.net/meta/images/lol/14.14.1/item/3087.png" class="item4" alt="item4">
-              <img src="https://opgg-static.akamaized.net/meta/images/lol/14.14.1/item/3087.png" class="item5" alt="item5">
-              <img src="https://opgg-static.akamaized.net/meta/images/lol/14.14.1/item/3087.png" class="item6" alt="item6">
+              <div class="multikill">펜타킬</div>
             </div>
 
             <div class="users">
@@ -201,7 +264,6 @@
                 <p class="user3">유저3</p>
                 <p class="user4">유저4</p>
                 <p class="user5">유저5</p>
-                <p class="user6">유저6</p>
               </div>
 
               <div class="team2">
@@ -210,12 +272,12 @@
                 <p class="user3">유저3</p>
                 <p class="user4">유저4</p>
                 <p class="user5">유저5</p>
-                <p class="user6">유저6</p>
               </div>
             </div>
             
           </div>
-        </section>
+
+        </div>
       </div>
     </div>
   </div>

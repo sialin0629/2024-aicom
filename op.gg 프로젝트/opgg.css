@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: #14141a;
+}
+
 #container {
   width: 1000px;
   margin: 0 auto;
@@ -11,7 +15,7 @@
 
 #container section {
   background-color: #FFF;
-  margin: 20px 0;
+  margin: 10px 0;
   border: 1px solid silver;
   border-radius: 5px;
 }
@@ -19,7 +23,7 @@
 /* 검색메뉴 */
 #search_menu {
   height: 100px;
-  padding-top: 23px;
+  padding-top: 25px;
 }
 
 #search_bar {
@@ -30,6 +34,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #FFF;
 }
 
 #search_bar input {
@@ -58,19 +63,20 @@
 }
 
 #rank_info {
-  width: 25%;
-  margin-right: 20px;
+  width: 30%;
+  margin-right: 10px;
 }
 
 #summary_info {
-  width: 75%;
+  width: 70%;
 }
 
 /* 플레이어 정보 메뉴 */
 #player_menu {
-  height: 130px;
-  padding: 15px;
+  height: 200px;
+  padding: 15px 15px 15px 0px;
   display: flex;
+  color: #FFF;
 }
 
 #player {
@@ -78,8 +84,36 @@
   display: flex;
 }
 
-#player img {
-  width: 100px;
+#player_icon {
+  position: relative;
+}
+
+#player_icon img {
+  width: 150px;
+  margin-right: 20px;
+  border-radius: 10px;
+}
+
+#player_level {
+  position: absolute;
+  top: 135px;
+  left: 50px;
+  background-color: rgb(107, 102, 102);
+  width: 50px; height: 30px;
+  text-align: center;
+  color: #FFF;
+  padding: 4px;
+  font-size: 12pt;
+  border-radius: 5px;
+}
+
+/* 랭크 지표 메뉴 */
+#rank_info section {
+  padding: 10px;
+}
+
+#rank_info section hr {
+  margin-top: 10px;
 }
 
 #solo_rank img {
@@ -116,39 +150,162 @@
 }
 
 /* 20개 게임들 */
-#game20_menu {
-  padding: 20px; 
-  text-align: center;
-}
+
 
 .game { 
   display: flex;
   align-items: center;
-  padding: 10px;
+  padding: 10px 0px;
+  margin-bottom: 10px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  color: #FFF;
 }
 
-.victory { background-color: rgb(207, 236, 248); border-left: 5px solid skyblue;}
-.defeat { background-color: rgb(252, 211, 218); border-left: 5px solid lightcoral; }
+.victory { 
+  background-color: rgb(33, 58, 150, 0.3); 
+  border-left: 5px solid rgb(33, 58, 150);
+}
 
-.mod { flex: 2; }
+.defeat {
+  background-color: rgb(227, 70, 70, 0.3);
+  border-left: 5px solid rgb(227, 70, 70);
+}
 
-.champion { flex: 1; }
+.simple_data {
+  flex: 1;
+  margin-left: 10px;
+  line-height: 15px;
+}
 
-.champion img { width: 50px; }
+.mod {
+  color: #0B89CF;
+}
 
-.multikill { flex: 1; }
+.simple_data p{
+  font-size: 7pt;
+  color: silver;
+  font-weight: 600;
+}
 
-.rune { flex: 1; }
-.rune img { width: 30px;}
+.simple_data hr{
+  margin: 10px 0;
+  width: 50%;
+}
 
-.score { flex: 2; }
-.score .death { color: red; }
+.champion {
+  flex: 2.5;
+  border-right: 1px solid rgb(49, 49, 49);
+}
 
-.item { flex: 3; }
-.item img { width: 20px; }
+.game_data {
+  display: flex;
+  position: relative;
+}
+
+.champion_icon {
+  width: 55px;
+  height: 55px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+.champion_level {
+  position: absolute;
+  top: 40px;
+  background-color: rgb(26, 25, 25);
+  width: 20px; height: 15px;
+  text-align: center;
+  color: #FFF;
+  padding: 2px;
+  font-size: 6pt;
+  font-weight: 900;
+  border-top-right-radius: 5px;
+}
+
+.champion_position {
+  position: absolute;
+  top: 35px;
+  left: 35px;
+  width: 20px; height: 20px;
+  background-color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 2px;
+  font-size: 6pt;
+  font-weight: 900;
+}
+
+.spell img {
+  width: 25px;
+  border-radius: 5px;
+}
+
+.spell_div {
+  width: 25px;
+  height: 25px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.spell1 {
+  margin-bottom: 4px;
+}
+
+.rune {
+  width: 25px;
+}
+
+.rune img {
+  width: 25px;
+}
+
+.rune_div {
+  width: 25px;
+  height: 25px;
+  border-radius: 30px;
+  background-color: black;
+}
+
+.rune_1 {
+  margin-bottom: 4px;
+}
+
+.item {
+  display: flex;
+}
+
+.item img { 
+  width: 30px;
+  padding-right: 2px;
+  border-radius: 5px;
+}
+
+.score1 {
+  width: 100px;
+  text-align: center;
+  padding: 5px;
+}
+
+.kda_area1 {
+  font-weight: 600;
+}
+
+.score1 .death { color: red; }
+
+.kda_area2 {
+  font-size: 10pt;
+  color: rgb(139, 139, 139);
+}
+
+.score2 {
+  flex: 2;
+  text-align: center;
+}
 
 .users {
-  flex: 3; 
+  flex: 3;
   display: flex;
   justify-content: space-between;
+  margin-right: 10px;
+  font-size: 10pt;
 }
