@@ -14,10 +14,10 @@ body {
 }
 
 #container section {
-  background-color: #FFF;
   margin: 10px 0;
-  border: 1px solid silver;
+  border: 1px solid rgb(64, 64, 92);
   border-radius: 5px;
+  color: #FFF;
 }
 
 /* 검색메뉴 */
@@ -107,6 +107,10 @@ body {
   border-radius: 5px;
 }
 
+#tag {
+  color: rgb(99, 99, 99);
+}
+
 /* 랭크 지표 메뉴 */
 #rank_info section {
   padding: 10px;
@@ -126,10 +130,14 @@ body {
 
 /* 20개 게임 요약 메뉴 */
 #summary_menu {
+  margin: 10px 0;
+  border-radius: 5px;
   display: flex;
   justify-content: space-around;
   text-align: center;
   padding: 20px;
+  background-color: rgb(31, 35, 49);
+  color: #FFF;
 }
 
 #record {

@@ -13,7 +13,7 @@
     <div id="search_menu">
 
       <div id="search_bar">
-        <input type="text" placeholder="Riot ID 검색">
+        <input class="search_name" type="text" value="아기토끼#냐영토끼" placeholder="Riot ID 검색">
         <button id="search_button">검색</button>
       </div>
 
@@ -24,12 +24,12 @@
 
       <div id="player">
         <div id="player_icon">
-          <img src="https://opgg-static.akamaized.net/meta/images/profile_icons/profileIcon6636.jpg" alt="">
-          <div id="player_level">100</div>
+          <img src="https://opgg-static.akamaized.net/meta/images/profile_icons/profileIcon6634.jpg" alt="">
+          <div id="player_level"><span>100</span></div>
         </div>
         
         <div id="player_info">
-          <h1>닉네임</h1>
+          <h1><span id="nickname">닉네임</span><span id="tag">#태그</span></h1>
         </div>
 
       </div>
@@ -55,7 +55,7 @@
 
       <div id="summary_info">
         <!-- 최근 20게임 요약 정보 -->
-        <section id="summary_menu">
+        <div id="summary_menu">
           <div id="record">
             전적
             <h2><span class="win">0</span>승 <span class="lose">0</span>패 / <span class="rate">0</span> %</h2>
@@ -108,7 +108,7 @@
             </div>
             
           </div>
-        </section>
+        </div>
   
         <!-- 20개 게임 각각의 정보 -->
         <div id="game20_menu">
@@ -282,5 +282,88 @@
     </div>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+
+    const API_KEY = "RGAPI-26f88084-cbc0-4e38-bbbd-659b4da89888"
+    let puuid
+    let summoner_level
+    let profile_icon
+    let id
+
+    // 검색 버튼에 클릭하면 모든 검색이 실행 된다.
+    const search_button = document.querySelector("#search_button")
+    search_button.addEventListener("click", async function() { // 검색버튼 클릭하면 이벤트 실행
+      try {
+        // 1. ACCOUNT API 들어가기 : puuid
+        let name = document.querySelector(".search_name").value.split("#")
+        let gameName = name[0]
+        let tagline = name[1]
+
+        const accountResponse = await axios.get(`https://asia.api.riotgames.com/riot/account/v1/accounts/by-riot-id/${gameName}/${tagline}?api_key=${API_KEY}`)
+        puuid = accountResponse.data.puuid
+        console.log(puuid)
+
+        document.querySelector("#nickname").textContent = accountResponse.data.gameName
+        document.querySelector("#tag").textContent = "#" + accountResponse.data.tagLine
+
+        // 2. SUMMONER API 들어가기 : 유저의 레벨, 프로필이미지, id
+        const summonerResponse = await axios.get(`https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/${puuid}?api_key=${API_KEY}`)
+        console.log(summonerResponse)
+        summoner_level = summonerResponse.data.summonerLevel
+        profile_icon = summonerResponse.data.profileIconId
+        id = summonerResponse.data.id
+
+        document.querySelector("#player_level span").textContent = summoner_level // 레벨 변경
+        document.querySelector("#player_icon img").setAttribute("src", `https://opgg-static.akamaized.net/meta/images/profile_icons/profileIcon${profile_icon}.jpg`) // 프로필 사진 변경
+
+
+        // 3-1 LEAGUE API 들어가기 : 티어, 승패 등등의 전적
+        const leagueResponse = await axios.get(`https://kr.api.riotgames.com/lol/league/v4/entries/by-summoner/${id}?api_key=${API_KEY}`);
+        console.log(leagueResponse);
+
+        let soloRankData = null;
+        let flexRankData = null;
+
+        // 각 queueType에 맞는 데이터를 찾기
+        for (let i = 0; i < leagueResponse.data.length; i++) {
+          if (leagueResponse.data[i].queueType === 'RANKED_SOLO_5x5') {
+            soloRankData = leagueResponse.data[i];
+          } else if (leagueResponse.data[i].queueType === 'RANKED_FLEX_SR') {
+            flexRankData = leagueResponse.data[i];
+          }
+        }
+
+        // 솔로 랭크 데이터 처리
+        if (soloRankData) {
+          const solo_rank_tier_img = document.querySelector("#solo_rank img");
+          solo_rank_tier_img.setAttribute("src", `https://opgg-static.akamaized.net/images/medals_new/${soloRankData.tier.toLowerCase()}.png?image=q_auto,f_webp,w_144&v=1721451321478`);
+        
+          document.querySelector("#solo_rank .win").textContent = soloRankData.wins; // 솔랭 승리
+          document.querySelector("#solo_rank .lose").textContent = soloRankData.losses; // 솔랭 패배
+          document.querySelector("#solo_rank .rate").textContent = ((soloRankData.wins / (soloRankData.wins + soloRankData.losses)) * 100).toFixed(2); // 솔랭 승률
+        }
+
+        // 자랭 데이터 처리
+        if (flexRankData) {
+          const flex_rank_tier_img = document.querySelector("#flex_rank img");
+          flex_rank_tier_img.setAttribute("src", `https://opgg-static.akamaized.net/images/medals_new/${flexRankData.tier.toLowerCase()}.png?image=q_auto,f_webp,w_144&v=1721451321478`);
+        
+          document.querySelector("#flex_rank .win").textContent = flexRankData.wins; // 자랭 승리
+          document.querySelector("#flex_rank .lose").textContent = flexRankData.losses; // 자랭 패배
+          document.querySelector("#flex_rank .rate").textContent = ((flexRankData.wins / (flexRankData.wins + flexRankData.losses)) * 100).toFixed(2); // 자랭 승률
+        }
+
+
+
+        // 3-2. MATCH API 들어감 : puuid로 20개 게임 불러오기
+        // 여기서 적절한 API 호출 및 처리 추가
+
+      } catch (error) {
+        console.error(error)
+      }
+    })
+
+  </script>
 </body>
 </html>

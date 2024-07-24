@@ -21,12 +21,14 @@
     // setInterval. interval 간격
 
     let time = 1
-    setInterval(function(){
+    let interval = setInterval(function(){
       console.log(time)
       time += 1
 
       box.textContent = `${time}초`
     }, 1000)
+
+    clearInterval(interval)
 
     let s
     s = 5
@@ -35,7 +37,7 @@
       alert(`${s}초 지났음`)
     }, s * 1000);
 
-    clearInterval(timeout)
+    clearTimeout(timeout)
 
   </script>
 </body>
