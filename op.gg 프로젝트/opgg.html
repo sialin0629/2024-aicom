@@ -29,7 +29,7 @@
         </div>
         
         <div id="player_info">
-          <h1><span id="nickname">닉네임</span><span id="tag">#태그</span></h1>
+          <h1><span id="nickname">닉네임</span> <span id="tag">#태그</span></h1>
         </div>
 
       </div>
@@ -39,18 +39,94 @@
 
       <div id="rank_info">
         <section id="solo_rank">
-          <h5>솔로랭크</h5>
-          <hr>
-          <img src="https://opgg-static.akamaized.net/images/medals_new/challenger.png?image=q_auto,f_webp,w_144&v=1721451321478" alt="솔랭티어">
-          <span class="win">0</span>승 <span class="lose">0</span>패 / <span class="rate">0</span> %
+          <div id="rank_name">
+            <h5>솔로랭크</h5>
+          </div>
+
+          <div id="rank_data">
+            <hr>
+            <div id="rank_detail_data">
+              <img src="https://opgg-static.akamaized.net/images/medals_new/challenger.png?image=q_auto,f_webp,w_144&v=1721451321478" alt="솔랭티어">
+              
+              <div id="tier_name">
+                <h4>Challenger</h4>
+                <p><span>2</span> LP</p>
+              </div>
+
+              <div id="rank_num_data">
+                <p><span class="win">0</span>승 <span class="lose">0</span>패</p>
+                <p>승률 <span class="rate">0</span>%</p>
+              </div>
+            </div>
+          </div>
+
         </section>
     
         <section id="flex_rank">
-          <h5>자유랭크</h5>
-          <hr>
-          <img src="https://opgg-static.akamaized.net/images/medals_new/challenger.png?image=q_auto,f_webp,w_144&v=1721451321478" alt="자랭티어">
-          <span class="win">0</span>승 <span class="lose">0</span>패 / <span class="rate">0</span> %
+          <div id="rank_name">
+            <h5>자유랭크</h5>
+          </div>
+
+          <div id="rank_data">
+            <hr>
+            <div id="rank_detail_data">
+              <img src="https://opgg-static.akamaized.net/images/medals_new/challenger.png?image=q_auto,f_webp,w_144&v=1721451321478" alt="솔랭티어">
+              
+              <div id="tier_name">
+                <h4>Challenger</h4>
+                <p><span>0</span> LP</p>
+              </div>
+
+              <div id="rank_num_data">
+                <p><span class="win">0</span>승 <span class="lose">0</span>패</p>
+                <p>승률 <span class="rate">0</span>%</p>
+              </div>
+
+            </div>
+          </div>
+          
         </section>
+
+        <div id="latest_position">
+          <div id="position_data">
+            <div id="top">
+              <img src="https://s-lol-web.op.gg/images/icon/icon-position-top.svg" alt="top">
+              <br>
+              <span>0</span>
+            </div>
+
+            <div id="jungle">
+              <img src="https://s-lol-web.op.gg/images/icon/icon-position-jungle.svg" alt="jungle">
+              <br>
+              <span>0</span>
+            </div>
+
+            <div id="mid">
+              <img src="https://s-lol-web.op.gg/images/icon/icon-position-mid.svg" alt="mid">
+              <br>
+              <span>0</span>
+            </div>
+
+            <div id="bot">
+              <img src="https://s-lol-web.op.gg/images/icon/icon-position-adc.svg" alt="bot">
+              <br>
+              <span>0</span>
+            </div>
+
+            <div id="supporter">
+              <img src="https://s-lol-web.op.gg/images/icon/icon-position-support.svg" alt="supporter">
+              <br>
+              <span>0</span>
+            </div>
+
+            <div id="etc">
+              <img src="https://s-lol-web.op.gg/images/icon/icon-position-all.svg" alt="etc">
+              <br>
+              <span>0</span>
+            </div>
+          </div>
+          
+        </div>
       </div>
 
       <div id="summary_info">
@@ -67,47 +143,7 @@
             최근 챔피언
           </div>
 
-          <div id="latest_position">
-            <p>최근 포지션</p>
-            <div id="position_data">
-              <div id="top">
-                <img src="https://s-lol-web.op.gg/images/icon/icon-position-top.svg" alt="top">
-                <br>
-                <span>0</span>
-              </div>
-  
-              <div id="jungle">
-                <img src="https://s-lol-web.op.gg/images/icon/icon-position-jungle.svg" alt="jungle">
-                <br>
-                <span>0</span>
-              </div>
-  
-              <div id="mid">
-                <img src="https://s-lol-web.op.gg/images/icon/icon-position-mid.svg" alt="mid">
-                <br>
-                <span>0</span>
-              </div>
-  
-              <div id="bot">
-                <img src="https://s-lol-web.op.gg/images/icon/icon-position-adc.svg" alt="bot">
-                <br>
-                <span>0</span>
-              </div>
-  
-              <div id="supporter">
-                <img src="https://s-lol-web.op.gg/images/icon/icon-position-support.svg" alt="supporter">
-                <br>
-                <span>0</span>
-              </div>
-  
-              <div id="etc">
-                <img src="https://s-lol-web.op.gg/images/icon/icon-position-all.svg" alt="etc">
-                <br>
-                <span>0</span>
-              </div>
-            </div>
-            
-          </div>
+
         </div>
   
         <!-- 20개 게임 각각의 정보 -->
@@ -335,24 +371,41 @@
         }
 
         // 솔로 랭크 데이터 처리
-        if (soloRankData) {
-          const solo_rank_tier_img = document.querySelector("#solo_rank img");
-          solo_rank_tier_img.setAttribute("src", `https://opgg-static.akamaized.net/images/medals_new/${soloRankData.tier.toLowerCase()}.png?image=q_auto,f_webp,w_144&v=1721451321478`);
-        
-          document.querySelector("#solo_rank .win").textContent = soloRankData.wins; // 솔랭 승리
-          document.querySelector("#solo_rank .lose").textContent = soloRankData.losses; // 솔랭 패배
-          document.querySelector("#solo_rank .rate").textContent = ((soloRankData.wins / (soloRankData.wins + soloRankData.losses)) * 100).toFixed(2); // 솔랭 승률
+        function updateRankData(rankElementId, rankData) {
+          const rankTierImg = document.querySelector(`#${rankElementId} img`);
+          const rankElement = document.querySelector(`#${rankElementId}`);
+          const rankNameElement = document.querySelector(`#${rankElementId} #rank_name`);
+
+          if (rankData) {
+              rankTierImg.setAttribute("src", `https://opgg-static.akamaized.net/images/medals_new/${rankData.tier.toLowerCase()}.png?image=q_auto,f_webp,w_144&v=1721451321478`);
+
+              let rank_tier_num = rankData.rank
+              if (rankData.tier == "CHALLENGER" || rankData.tier == "GRANDMASTER" || rankData.tier == "MASTER") {
+                rank_tier_num = ""
+              }
+
+              rankElement.querySelector("#tier_name h4").textContent = rankData.tier + " " + rank_tier_num
+              rankElement.querySelector("#tier_name p span").textContent = rankData.leaguePoints
+              rankElement.querySelector(".win").textContent = rankData.wins; // 승리
+              rankElement.querySelector(".lose").textContent = rankData.losses; // 패배
+              rankElement.querySelector(".rate").textContent = ((rankData.wins / (rankData.wins + rankData.losses)) * 100).toFixed(1); // 승률
+          } else {
+              const unranked = document.createElement("h5");
+              unranked.classList.add("unranked");
+              unranked.textContent = "Unranked";
+              rankNameElement.appendChild(unranked);
+          
+              const rankDataElement = document.querySelector(`#${rankElementId} #rank_data`);
+              rankElement.removeChild(rankDataElement);
+          }
         }
 
+        // 솔랭 데이터 처리
+        updateRankData("solo_rank", soloRankData);
+
         // 자랭 데이터 처리
-        if (flexRankData) {
-          const flex_rank_tier_img = document.querySelector("#flex_rank img");
-          flex_rank_tier_img.setAttribute("src", `https://opgg-static.akamaized.net/images/medals_new/${flexRankData.tier.toLowerCase()}.png?image=q_auto,f_webp,w_144&v=1721451321478`);
-        
-          document.querySelector("#flex_rank .win").textContent = flexRankData.wins; // 자랭 승리
-          document.querySelector("#flex_rank .lose").textContent = flexRankData.losses; // 자랭 패배
-          document.querySelector("#flex_rank .rate").textContent = ((flexRankData.wins / (flexRankData.wins + flexRankData.losses)) * 100).toFixed(2); // 자랭 승률
-        }
+        updateRankData("flex_rank", flexRankData);
+
 
 
 
